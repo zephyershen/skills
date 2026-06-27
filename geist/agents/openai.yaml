@@ -1,0 +1,4 @@
+interface:
+  display_name: "Geist"
+  short_description: "Use Vercel Geist design system accurately"
+  default_prompt: "Use $geist to build a Vercel-style interface with current Geist components."

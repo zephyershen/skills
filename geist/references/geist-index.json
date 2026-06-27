@@ -1,0 +1,4666 @@
+{
+  "generated_at": "2026-06-26T03:10:52.746380+00:00",
+  "source": "https://vercel.com/geist/introduction",
+  "details_fetched": true,
+  "cached_detail_pages": 77,
+  "requested_slugs": [
+    "button"
+  ],
+  "item_count": 78,
+  "items": [
+    {
+      "name": "Brands",
+      "slug": "brands",
+      "page_slug": "brands",
+      "path": "/geist/brands",
+      "fragment": null,
+      "url": "https://vercel.com/geist/brands",
+      "category": "brands",
+      "order": 1,
+      "title": "Brands",
+      "description": "We’ve created the following guidelines to help others use our brand and assets, including our logo, content, and trademarks, without having to negotiate legal agreements for each use. Contact us and include a visual mockup for any intended use not covered by these guidelines.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vercel"
+        },
+        {
+          "level": "h2",
+          "text": "Symbol & unicode"
+        },
+        {
+          "level": "h2",
+          "text": "Spacing considerations"
+        },
+        {
+          "level": "h2",
+          "text": "Next.js"
+        },
+        {
+          "level": "h2",
+          "text": "Next.js symbol"
+        },
+        {
+          "level": "h2",
+          "text": "Next.js spelling"
+        },
+        {
+          "level": "h2",
+          "text": "Turbo"
+        },
+        {
+          "level": "h2",
+          "text": "Turbo symbol"
+        },
+        {
+          "level": "h2",
+          "text": "Turborepo"
+        },
+        {
+          "level": "h2",
+          "text": "Turborepo Symbol"
+        },
+        {
+          "level": "h2",
+          "text": "Turbopack"
+        },
+        {
+          "level": "h2",
+          "text": "Turbopack Symbol"
+        },
+        {
+          "level": "h2",
+          "text": "v0"
+        },
+        {
+          "level": "h2",
+          "text": "AI SDK"
+        },
+        {
+          "level": "h2",
+          "text": "General Information"
+        },
+        {
+          "level": "h2",
+          "text": "Usage"
+        },
+        {
+          "level": "h2",
+          "text": "Misuse"
+        }
+      ],
+      "inline_code": [
+        "import { LogoAiSdk } from '@vercel/geistcn-assets/logos'; <LogoAiSdk />"
+      ],
+      "packages": [],
+      "final_url": "https://vercel.com/geist/brands"
+    },
+    {
+      "name": "Geistcn Icons",
+      "slug": "geistcn-icons",
+      "page_slug": "geistcn-icons",
+      "path": "/geist/geistcn-icons",
+      "fragment": null,
+      "url": "https://vercel.com/geist/geistcn-icons",
+      "category": "resources",
+      "order": 2,
+      "title": "Geist Design System",
+      "description": "Vercel design system for building consistent web experiences.",
+      "headings": [],
+      "inline_code": [],
+      "packages": [],
+      "final_url": "https://vercel.com/geist/introduction"
+    },
+    {
+      "name": "Avatar",
+      "slug": "avatar",
+      "page_slug": "avatar",
+      "path": "/geist/avatar",
+      "fragment": null,
+      "url": "https://vercel.com/geist/avatar",
+      "category": "components",
+      "order": 3,
+      "title": "Avatar",
+      "description": "Avatars represent a user or a team. Stacked avatars represent a group of people",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Group"
+        },
+        {
+          "level": "h2",
+          "text": "Stacking order"
+        },
+        {
+          "level": "h2",
+          "text": "Overlap"
+        },
+        {
+          "level": "h2",
+          "text": "Fixed overlap"
+        },
+        {
+          "level": "h2",
+          "text": "Size"
+        },
+        {
+          "level": "h2",
+          "text": "Git"
+        },
+        {
+          "level": "h2",
+          "text": "With custom icon"
+        },
+        {
+          "level": "h2",
+          "text": "Letter"
+        },
+        {
+          "level": "h2",
+          "text": "Placeholder"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "<Avatar>",
+        "<AvatarGroup>",
+        "?",
+        "Acme Inc.",
+        "Avatar of …",
+        "Avatar with initials:",
+        "Jane Doe",
+        "letter",
+        "overlap=\"auto\"",
+        "placeholder",
+        "reverse",
+        "size",
+        "src",
+        "text-label-14",
+        "text-label-16",
+        "title"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/avatar"
+    },
+    {
+      "name": "Colors",
+      "slug": "colors",
+      "page_slug": "colors",
+      "path": "/geist/colors",
+      "fragment": null,
+      "url": "https://vercel.com/geist/colors",
+      "category": "foundations",
+      "order": 4,
+      "title": "Colors",
+      "description": "Learn how to work with our color system. Right click to copy raw values.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Scales"
+        },
+        {
+          "level": "h2",
+          "text": "Backgrounds"
+        },
+        {
+          "level": "h2",
+          "text": "Colors 1–3: Component Backgrounds"
+        },
+        {
+          "level": "h2",
+          "text": "Colors 4-6: Borders"
+        },
+        {
+          "level": "h2",
+          "text": "Colors 7-8: High Contrast Backgrounds"
+        },
+        {
+          "level": "h2",
+          "text": "Colors 9-10: Text and Icons"
+        }
+      ],
+      "inline_code": [],
+      "packages": [],
+      "final_url": "https://vercel.com/geist/colors"
+    },
+    {
+      "name": "Grid",
+      "slug": "grid",
+      "page_slug": "grid",
+      "path": "/geist/grid",
+      "fragment": null,
+      "url": "https://vercel.com/geist/grid",
+      "category": "components",
+      "order": 5,
+      "title": "Grid",
+      "description": "Display elements in a grid layout.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Grid"
+        },
+        {
+          "level": "h2",
+          "text": "Basic grid"
+        },
+        {
+          "level": "h2",
+          "text": "Solid cells"
+        },
+        {
+          "level": "h2",
+          "text": "Responsive grid"
+        },
+        {
+          "level": "h2",
+          "text": "Responsive Grid with responsive guide clipping cells"
+        },
+        {
+          "level": "h2",
+          "text": "Grid with hidden row guides"
+        },
+        {
+          "level": "h2",
+          "text": "Grid with hidden column guides"
+        },
+        {
+          "level": "h2",
+          "text": "Grid with overlaying cells"
+        },
+        {
+          "level": "h2",
+          "text": "Specific Grid with Guide Clipping"
+        },
+        {
+          "level": "h2",
+          "text": "Grid with cross"
+        },
+        {
+          "level": "h2",
+          "text": "Dashed grid with cross"
+        },
+        {
+          "level": "h2",
+          "text": "Dashed grid with grid page"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "aria-hidden=\"true\"",
+        "columns",
+        "grid grid-cols-*",
+        "rows",
+        "solid"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/grid"
+    },
+    {
+      "name": "Introduction",
+      "slug": "introduction",
+      "page_slug": "introduction",
+      "path": "/geist/introduction",
+      "fragment": null,
+      "url": "https://vercel.com/geist/introduction",
+      "category": "foundations",
+      "order": 8,
+      "title": "Geist Design System",
+      "description": "Vercel design system for building consistent web experiences.",
+      "headings": [],
+      "inline_code": [],
+      "packages": [],
+      "final_url": "https://vercel.com/geist/introduction"
+    },
+    {
+      "name": "Typography",
+      "slug": "typography",
+      "page_slug": "typography",
+      "path": "/geist/typography",
+      "fragment": null,
+      "url": "https://vercel.com/geist/typography",
+      "category": "foundations",
+      "order": 10,
+      "title": "Typography",
+      "description": "Rules of typesetting throughout the system.",
+      "headings": [
+        {
+          "level": "h3",
+          "text": "Usage"
+        },
+        {
+          "level": "h3",
+          "text": "Headings"
+        },
+        {
+          "level": "h3",
+          "text": "Buttons"
+        },
+        {
+          "level": "h3",
+          "text": "Label"
+        },
+        {
+          "level": "h3",
+          "text": "Copy"
+        }
+      ],
+      "inline_code": [
+        "1<p className=\"text-copy-16\">2 Copy 16 <strong>with Strong</strong>3</p>",
+        "<strong>",
+        "font-size",
+        "font-weight",
+        "letter-spacing",
+        "line-height"
+      ],
+      "packages": [],
+      "final_url": "https://vercel.com/geist/typography"
+    },
+    {
+      "name": "Materials",
+      "slug": "materials",
+      "page_slug": "materials",
+      "path": "/geist/materials",
+      "fragment": null,
+      "url": "https://vercel.com/geist/materials",
+      "category": "foundations",
+      "order": 11,
+      "title": "Materials",
+      "description": "Presets for radii, fills, strokes, and shadows.",
+      "headings": [
+        {
+          "level": "h3",
+          "text": "Surface"
+        },
+        {
+          "level": "h3",
+          "text": "Floating"
+        },
+        {
+          "level": "h3",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "base",
+        "fullscreen",
+        "large",
+        "menu",
+        "modal",
+        "role=\"dialog\"",
+        "role=\"tooltip\"",
+        "small",
+        "tooltip",
+        "z-index"
+      ],
+      "packages": [],
+      "final_url": "https://vercel.com/geist/materials"
+    },
+    {
+      "name": "Badge",
+      "slug": "badge",
+      "page_slug": "badge",
+      "path": "/geist/badge",
+      "fragment": null,
+      "url": "https://vercel.com/geist/badge",
+      "category": "components",
+      "order": 18,
+      "title": "Badge",
+      "description": "A label that emphasizes an element that requires attention, or helps categorize with other similar elements.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Variants"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "With icons"
+        },
+        {
+          "level": "h2",
+          "text": "Pill"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "-subtle",
+        "<Badge />",
+        "Active",
+        "Alpha",
+        "Alpha: API may change before GA",
+        "Beta",
+        "Canceled",
+        "Cancelled",
+        "Currently Active",
+        "Deployed",
+        "Early Access",
+        "Enterprise Trial",
+        "Live",
+        "Pending",
+        "Pro",
+        "Prod",
+        "Production",
+        "You are on Pro",
+        "amber",
+        "blue",
+        "gray",
+        "green",
+        "icon",
+        "onClick",
+        "pill",
+        "red",
+        "title"
+      ],
+      "packages": [
+        "@vercel/geistcn/components",
+        "@vercel/geistcn/utils"
+      ],
+      "final_url": "https://vercel.com/geist/badge"
+    },
+    {
+      "name": "Banner",
+      "slug": "banner",
+      "page_slug": "banner",
+      "path": "/geist/banner",
+      "fragment": null,
+      "url": "https://vercel.com/geist/banner",
+      "category": "components",
+      "order": 19,
+      "title": "Banner",
+      "description": "A prominent message that spans the full width of its container to announce important information.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/banner"
+    },
+    {
+      "name": "Book",
+      "slug": "book",
+      "page_slug": "book",
+      "path": "/geist/book",
+      "fragment": null,
+      "url": "https://vercel.com/geist/book",
+      "category": "components",
+      "order": 20,
+      "title": "Book",
+      "description": "A responsive book component.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Variants"
+        },
+        {
+          "level": "h2",
+          "text": "Custom color"
+        },
+        {
+          "level": "h2",
+          "text": "Custom icon"
+        },
+        {
+          "level": "h2",
+          "text": "Custom illustration"
+        },
+        {
+          "level": "h2",
+          "text": "Responsive"
+        },
+        {
+          "level": "h2",
+          "text": "Width"
+        },
+        {
+          "level": "h2",
+          "text": "Textured"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "aria-hidden",
+        "color",
+        "simple",
+        "stripe",
+        "var(--ds-amber-600)",
+        "var(--ds-blue-700)"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/book"
+    },
+    {
+      "name": "Breadcrumbs",
+      "slug": "breadcrumbs",
+      "page_slug": "breadcrumbs",
+      "path": "/geist/breadcrumbs",
+      "fragment": null,
+      "url": "https://vercel.com/geist/breadcrumbs",
+      "category": "components",
+      "order": 21,
+      "title": "Breadcrumbs",
+      "description": "Navigation aid that shows the user's location within a site's hierarchy, with text and menu variants.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Active"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/breadcrumbs"
+    },
+    {
+      "name": "Browser",
+      "slug": "browser",
+      "page_slug": "browser",
+      "path": "/geist/browser",
+      "fragment": null,
+      "url": "https://vercel.com/geist/browser",
+      "category": "components",
+      "order": 22,
+      "title": "Browser",
+      "description": "The Browser component lets you showcase website screenshots or any other content within a realistic browser-style frame.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Composition"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Browser",
+        "Controls",
+        "Dots",
+        "aria-hidden=\"true\"",
+        "dark",
+        "light"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/browser"
+    },
+    {
+      "name": "Button",
+      "slug": "button",
+      "page_slug": "button",
+      "path": "/geist/button",
+      "fragment": null,
+      "url": "https://vercel.com/geist/button",
+      "category": "components",
+      "order": 23,
+      "title": "Button",
+      "description": "Trigger an action or event, such as submitting a form or displaying a dialog.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "All Types and Sizes in comparison"
+        },
+        {
+          "level": "h2",
+          "text": "Shapes"
+        },
+        {
+          "level": "h2",
+          "text": "Prefix and suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Rounded"
+        },
+        {
+          "level": "h2",
+          "text": "Loading"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled variants"
+        },
+        {
+          "level": "h2",
+          "text": "Link"
+        },
+        {
+          "level": "h2",
+          "text": "Custom"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "Button",
+        "ButtonLink",
+        "Confirm",
+        "Copy",
+        "Copy deployment URL",
+        "CustomButton",
+        "Delete Project",
+        "Deploy Project",
+        "Instead",
+        "Invite Member",
+        "OK",
+        "Project deleted",
+        "Rotate Key",
+        "Submit",
+        "Use a Recovery Code Instead",
+        "Verb + Noun",
+        "aria-label",
+        "ghost",
+        "loading",
+        "primary",
+        "shadow",
+        "shape=\"rounded\"",
+        "success",
+        "svgOnly",
+        "type",
+        "type=\"error\"",
+        "type=\"secondary\"",
+        "typeName",
+        "typeName=\"submit\"",
+        "violet"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/button"
+    },
+    {
+      "name": "Calendar",
+      "slug": "calendar",
+      "page_slug": "calendar",
+      "path": "/geist/calendar",
+      "fragment": null,
+      "url": "https://vercel.com/geist/calendar",
+      "category": "components",
+      "order": 24,
+      "title": "Calendar",
+      "description": "Displays a calendar from which users can select a date or range of dates.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Horizontal Layout"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Presets"
+        },
+        {
+          "level": "h2",
+          "text": "Compact"
+        },
+        {
+          "level": "h2",
+          "text": "Stacked"
+        },
+        {
+          "level": "h2",
+          "text": "Presets with default value"
+        },
+        {
+          "level": "h2",
+          "text": "Min and max dates"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "7d",
+        "<Calendar.Presets>",
+        "<Calendar>",
+        "Apr 1 – Apr 28, 2026",
+        "From Apr 1 to Apr 28",
+        "Last 30 Days",
+        "Last 7 Days",
+        "Month to Date",
+        "Page Down",
+        "Page Up",
+        "Pick a date",
+        "Shift",
+        "aria-live=\"polite\"",
+        "horizontalLayout",
+        "large",
+        "max",
+        "min",
+        "small"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/calendar"
+    },
+    {
+      "name": "Card",
+      "slug": "card",
+      "page_slug": "card",
+      "path": "/geist/card",
+      "fragment": null,
+      "url": "https://vercel.com/geist/card",
+      "category": "components",
+      "order": 25,
+      "title": "Card",
+      "description": "A container that groups related content and actions on a surface.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Hover"
+        },
+        {
+          "level": "h2",
+          "text": "Border"
+        },
+        {
+          "level": "h2",
+          "text": "Border Between"
+        },
+        {
+          "level": "h2",
+          "text": "Border Between Vertical"
+        },
+        {
+          "level": "h2",
+          "text": "Secondary"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/card"
+    },
+    {
+      "name": "Checkbox",
+      "slug": "checkbox",
+      "page_slug": "checkbox",
+      "path": "/geist/checkbox",
+      "fragment": null,
+      "url": "https://vercel.com/geist/checkbox",
+      "category": "components",
+      "order": 26,
+      "title": "Checkbox",
+      "description": "A control that toggles between two options, checked or unchecked.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Indeterminate"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "3 of 5 selected",
+        "<fieldset>",
+        "<label>",
+        "<legend>",
+        "I agree to the Terms of Service.",
+        "Notifications",
+        "Required Permissions",
+        "aria-label=\"Select {row name}\"",
+        "htmlFor"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/checkbox"
+    },
+    {
+      "name": "Choicebox",
+      "slug": "choicebox",
+      "page_slug": "choicebox",
+      "path": "/geist/choicebox",
+      "fragment": null,
+      "url": "https://vercel.com/geist/choicebox",
+      "category": "components",
+      "order": 27,
+      "title": "Choicebox",
+      "description": "A larger form of Radio or Checkbox, where the user has a larger tap target and more details.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Single-select"
+        },
+        {
+          "level": "h2",
+          "text": "Multi-select"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Custom content"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "$20/mo · 100 GB bandwidth",
+        "<fieldset>",
+        "<legend>",
+        "Available on Pro",
+        "aria-label"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/choicebox"
+    },
+    {
+      "name": "Clearable Input",
+      "slug": "clearable-input",
+      "page_slug": "clearable-input",
+      "path": "/geist/clearable-input",
+      "fragment": null,
+      "url": "https://vercel.com/geist/clearable-input",
+      "category": "components",
+      "order": 28,
+      "title": "Clearable Input",
+      "description": "Text input with a clear button that resets the value on Escape.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With Label"
+        },
+        {
+          "level": "h2",
+          "text": "With Cmdk"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "With Clear Callback"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/clearable-input"
+    },
+    {
+      "name": "Code",
+      "slug": "code",
+      "page_slug": "code",
+      "path": "/geist/code",
+      "fragment": null,
+      "url": "https://vercel.com/geist/code",
+      "category": "components",
+      "order": 29,
+      "title": "Code",
+      "description": "Display a snippet of code with syntax highlighting.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/code"
+    },
+    {
+      "name": "Code Block",
+      "slug": "code-block",
+      "page_slug": "code-block",
+      "path": "/geist/code-block",
+      "fragment": null,
+      "url": "https://vercel.com/geist/code-block",
+      "category": "components",
+      "order": 30,
+      "title": "Code Block",
+      "description": "Code Block component used across Vercel and Next.js.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "No filename"
+        },
+        {
+          "level": "h2",
+          "text": "Highlighted lines"
+        },
+        {
+          "level": "h2",
+          "text": "Added & removed lines"
+        },
+        {
+          "level": "h2",
+          "text": "Referenced lines"
+        },
+        {
+          "level": "h2",
+          "text": "Language switcher"
+        },
+        {
+          "level": "h2",
+          "text": "Language switcher with tabs"
+        },
+        {
+          "level": "h2",
+          "text": "Hidden line numbers"
+        },
+        {
+          "level": "h2",
+          "text": "Open in v0"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        }
+      ],
+      "inline_code": [
+        "$",
+        "$ $ vercel deploy",
+        "// added",
+        "1module.exports = {2 experimental: {3 appDir: true,4 },5 appDir: true,6}",
+        "<CodeBlock>",
+        "<Snippet>",
+        "<pre>",
+        "`--prebuilt`",
+        "app/page.tsx",
+        "bash",
+        "diff",
+        "json",
+        "language",
+        "syntax",
+        "tabs",
+        "text=\"$ vercel deploy\"",
+        "tsx",
+        "v0",
+        "vercel.json"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/code-block"
+    },
+    {
+      "name": "Collapse",
+      "slug": "collapse",
+      "page_slug": "collapse",
+      "path": "/geist/collapse",
+      "fragment": null,
+      "url": "https://vercel.com/geist/collapse",
+      "category": "components",
+      "order": 31,
+      "title": "Collapse",
+      "description": "A set of headings, vertically stacked, that each reveal an related section of content. Commonly referred to as an accordion.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h3",
+          "text": "Question A"
+        },
+        {
+          "level": "h3",
+          "text": "Question B"
+        },
+        {
+          "level": "h2",
+          "text": "Expanded"
+        },
+        {
+          "level": "h3",
+          "text": "Question A"
+        },
+        {
+          "level": "h3",
+          "text": "Question B"
+        },
+        {
+          "level": "h2",
+          "text": "Multiple"
+        },
+        {
+          "level": "h3",
+          "text": "Question A"
+        },
+        {
+          "level": "h3",
+          "text": "Question B"
+        },
+        {
+          "level": "h2",
+          "text": "Small"
+        },
+        {
+          "level": "h3",
+          "text": "Question A"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<button>",
+        "Advanced Settings",
+        "CollapseGroup",
+        "Show Advanced Settings",
+        "aria-controls",
+        "aria-expanded",
+        "hidden"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/collapse"
+    },
+    {
+      "name": "Combobox",
+      "slug": "combobox",
+      "page_slug": "combobox",
+      "path": "/geist/combobox",
+      "fragment": null,
+      "url": "https://vercel.com/geist/combobox",
+      "category": "components",
+      "order": 32,
+      "title": "Combobox",
+      "description": "Filters large lists to selectable options based on the matching query.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Uncontrolled"
+        },
+        {
+          "level": "h2",
+          "text": "Controlled"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Errored"
+        },
+        {
+          "level": "h2",
+          "text": "Custom width input"
+        },
+        {
+          "level": "h2",
+          "text": "Custom width list"
+        },
+        {
+          "level": "h2",
+          "text": "Custom empty message"
+        },
+        {
+          "level": "h2",
+          "text": "Clearable"
+        },
+        {
+          "level": "h2",
+          "text": "With prefix icons"
+        },
+        {
+          "level": "h2",
+          "text": "With suffix icons"
+        },
+        {
+          "level": "h2",
+          "text": "With label"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Used inside a Modal"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<Combobox.Option>",
+        "<Combobox>",
+        "<Label htmlFor>",
+        "DATABASE_URL",
+        "Environment Variable Name",
+        "Next.js",
+        "NextJS",
+        "No results",
+        "No {items} match \"{query}\"",
+        "Region",
+        "Search regions",
+        "Search…",
+        "Select a region.",
+        "aria-label",
+        "aria-labelledby",
+        "clearable",
+        "id",
+        "label",
+        "search"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/combobox"
+    },
+    {
+      "name": "Command Menu",
+      "slug": "command-menu",
+      "page_slug": "command-menu",
+      "path": "/geist/command-menu",
+      "fragment": null,
+      "url": "https://vercel.com/geist/command-menu",
+      "category": "components",
+      "order": 33,
+      "title": "Command Menu",
+      "description": "Launch a set of actions as a full-screen overlay.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With divider"
+        },
+        {
+          "level": "h2",
+          "text": "With suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<CommandMenu.Group heading>",
+        "<CommandMenu.Item>",
+        "Actions",
+        "CommandMenuPage.label",
+        "CommandMenuPage.placeholder",
+        "Ctrl+K",
+        "Deploy Project",
+        "Go to project page",
+        "Invite Team Member",
+        "Kbd",
+        "Projects",
+        "Recent",
+        "Search projects…",
+        "Search…",
+        "Team Settings",
+        "Type a command or search…",
+        "aria-live=\"polite\"",
+        "keybind",
+        "…",
+        "⌘K"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/command-menu"
+    },
+    {
+      "name": "Context Card",
+      "slug": "context-card",
+      "page_slug": "context-card",
+      "path": "/geist/context-card",
+      "fragment": null,
+      "url": "https://vercel.com/geist/context-card",
+      "category": "components",
+      "order": 34,
+      "title": "Context Card",
+      "description": "Tooltip",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Alignment"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Created",
+        "Label: value",
+        "Last Active",
+        "N/A",
+        "Open Settings",
+        "Plan",
+        "View Project",
+        "align",
+        "null",
+        "—"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/context-card"
+    },
+    {
+      "name": "Context Menu",
+      "slug": "context-menu",
+      "page_slug": "context-menu",
+      "path": "/geist/context-menu",
+      "fragment": null,
+      "url": "https://vercel.com/geist/context-menu",
+      "category": "components",
+      "order": 35,
+      "title": "Context Menu",
+      "description": "Displays a brief heading and subheading to communicate any additional information or context a user needs to continue.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled items"
+        },
+        {
+          "level": "h2",
+          "text": "Link items"
+        },
+        {
+          "level": "h2",
+          "text": "Prefix and suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Copy URL",
+        "Delete",
+        "Delete Deployment",
+        "Move to Folder…",
+        "Open in New Tab",
+        "Rename…",
+        "Shift+F10",
+        "Verb + Noun",
+        "…"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/context-menu"
+    },
+    {
+      "name": "Copy Button",
+      "slug": "copy-button",
+      "page_slug": "copy-button",
+      "path": "/geist/copy-button",
+      "fragment": null,
+      "url": "https://vercel.com/geist/copy-button",
+      "category": "components",
+      "order": 36,
+      "title": "Copy Button",
+      "description": "A button that copies a given string to the clipboard and provides feedback when copied.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/copy-button"
+    },
+    {
+      "name": "Description",
+      "slug": "description",
+      "page_slug": "description",
+      "path": "/geist/description",
+      "fragment": null,
+      "url": "https://vercel.com/geist/description",
+      "category": "components",
+      "order": 37,
+      "title": "Description",
+      "description": "Displays a brief heading and subheading to communicate any additional information or context a user needs to continue.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Text right"
+        },
+        {
+          "level": "h2",
+          "text": "Ellipsis"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "<Description>",
+        "<dd>",
+        "<dl>",
+        "<dt>",
+        "Build Duration",
+        "Last Deployed",
+        "Plan",
+        "Region",
+        "tooltip"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/description"
+    },
+    {
+      "name": "Destructive Action Modal",
+      "slug": "destructive-action-modal",
+      "page_slug": "destructive-action-modal",
+      "path": "/geist/destructive-action-modal",
+      "fragment": null,
+      "url": "https://vercel.com/geist/destructive-action-modal",
+      "category": "components",
+      "order": 38,
+      "title": "Destructive Action Modal",
+      "description": "Confirm destructive actions with a required type-to-confirm gate and an optional irreversibility band.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Reversible"
+        },
+        {
+          "level": "h2",
+          "text": "Loading"
+        },
+        {
+          "level": "h2",
+          "text": "With error"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<b>my-project</b> and all its deployments will be permanently deleted.",
+        "Confirm",
+        "Continue",
+        "Couldn't save settings. Try again.",
+        "Delete",
+        "Delete Project",
+        "Delete this project?",
+        "Deleting my-project cannot be undone.",
+        "Error",
+        "OK",
+        "Project deleted",
+        "Project removed",
+        "This cannot be undone.",
+        "This project and all its deployments will be deleted.",
+        "To confirm, type \"delete my-project\"",
+        "To confirm, type the project name \"my-project\"",
+        "Verb + Noun",
+        "aria-hidden",
+        "aria-labelledby",
+        "cannot be undone.",
+        "confirmLabel",
+        "description",
+        "disable vercel authentication",
+        "error",
+        "htmlFor",
+        "irreversibleDescription",
+        "loading",
+        "my-project",
+        "onConfirm",
+        "open",
+        "title",
+        "verificationLabel=\"project name\"",
+        "verificationPhrase"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/destructive-action-modal"
+    },
+    {
+      "name": "Dots Menu",
+      "slug": "dots-menu",
+      "page_slug": "dots-menu",
+      "path": "/geist/dots-menu",
+      "fragment": null,
+      "url": "https://vercel.com/geist/dots-menu",
+      "category": "components",
+      "order": 39,
+      "title": "Dots Menu",
+      "description": "An overflow menu triggered by a three-dot icon that reveals additional actions in a dropdown.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled Menu Item"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/dots-menu"
+    },
+    {
+      "name": "Drawer",
+      "slug": "drawer",
+      "page_slug": "drawer",
+      "path": "/geist/drawer",
+      "fragment": null,
+      "url": "https://vercel.com/geist/drawer",
+      "category": "components",
+      "order": 40,
+      "title": "Drawer",
+      "description": "Display content in a separate view from the existing context.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Custom height"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Cancel",
+        "Deployment Details",
+        "DrawerTitle",
+        "Filter Logs",
+        "Verb + Noun",
+        "customHeight",
+        "verticalScroll"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/drawer"
+    },
+    {
+      "name": "Empty State",
+      "slug": "empty-state",
+      "page_slug": "empty-state",
+      "path": "/geist/empty-state",
+      "fragment": null,
+      "url": "https://vercel.com/geist/empty-state",
+      "category": "components",
+      "order": 41,
+      "title": "Empty State",
+      "description": "Fill spaces when no content has been added yet, or is temporarily empty due to the nature of the feature and should be designed to prevent confusion.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Empty state Design framework"
+        },
+        {
+          "level": "h2",
+          "text": "Blank slate"
+        },
+        {
+          "level": "h2",
+          "text": "Informational"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        }
+      ],
+      "inline_code": [
+        "Continue",
+        "Deploy Template",
+        "Get Started",
+        "Import Repository",
+        "No Logs Match Your Filter",
+        "No logs match “${query}”. Clear the filter to see all logs.",
+        "No {Items} Match Your Filters",
+        "OK",
+        "Push to your Git repository to create your first one.",
+        "Skip",
+        "Start Tour",
+        "Try Again",
+        "Verb + Noun",
+        "aria-live=\"polite\"",
+        "description",
+        "onClick",
+        "title",
+        "{Feature value} with the {Plan} plan."
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/empty-state"
+    },
+    {
+      "name": "Entity",
+      "slug": "entity",
+      "page_slug": "entity",
+      "path": "/geist/entity",
+      "fragment": null,
+      "url": "https://vercel.com/geist/entity",
+      "category": "components",
+      "order": 42,
+      "title": "Entity",
+      "description": "Displays up-to-two columns of content. The left column can contain arbitrary content, and the right column typically contains controls or actions related to the content in the left column.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Entity with Skeleton"
+        },
+        {
+          "level": "h2",
+          "text": "Entity with List"
+        },
+        {
+          "level": "h2",
+          "text": "Entity with List and Checkbox"
+        },
+        {
+          "level": "h2",
+          "text": "Entity with Fill"
+        },
+        {
+          "level": "h2",
+          "text": "Entity with Column ClassNames"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        }
+      ],
+      "inline_code": [
+        "<Entity>",
+        "Confirm",
+        "Member since Mar 14, 2026",
+        "Remove",
+        "Remove Member",
+        "Resend Invite",
+        "aria-label=\"Select {entity name}\"",
+        "entity-with-skeleton"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/entity"
+    },
+    {
+      "name": "Error",
+      "slug": "error",
+      "page_slug": "error",
+      "path": "/geist/error",
+      "fragment": null,
+      "url": "https://vercel.com/geist/error",
+      "category": "components",
+      "order": 43,
+      "title": "Error",
+      "description": "Good error design is clear, useful, and friendly. Designing concise and accurate error messages unblocks users and builds trust by meeting people where they are.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Custom label"
+        },
+        {
+          "level": "h2",
+          "text": "No label"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "With an error property"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<details>",
+        "Build failed. Bundle exceeds 50 MB.",
+        "Can’t",
+        "Couldn’t",
+        "Couldn’t Load Deployments",
+        "Couldn’t Load Page",
+        "Couldn’t save settings. Try again.",
+        "Couldn’t verify your passkey. Try again.",
+        "Failed to",
+        "Oops",
+        "Reconnect GitHub",
+        "Something Went Wrong",
+        "Try Again",
+        "Unable to",
+        "Unfortunately",
+        "Update Payment Method",
+        "We’re sorry",
+        "aria-live=\"assertive\"",
+        "aria-live=\"polite\"",
+        "dpl_…",
+        "error",
+        "error.tsx",
+        "toasts.error()",
+        "x-vercel-id"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/error"
+    },
+    {
+      "name": "Error Card",
+      "slug": "error-card",
+      "page_slug": "error-card",
+      "path": "/geist/error-card",
+      "fragment": null,
+      "url": "https://vercel.com/geist/error-card",
+      "category": "components",
+      "order": 44,
+      "title": "Error Card",
+      "description": "A card used to communicate an error state with a title and message.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h3",
+          "text": "No credits left"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/error-card"
+    },
+    {
+      "name": "Feedback",
+      "slug": "feedback",
+      "page_slug": "feedback",
+      "path": "/geist/feedback",
+      "fragment": null,
+      "url": "https://vercel.com/geist/feedback",
+      "category": "components",
+      "order": 45,
+      "title": "Feedback",
+      "description": "Gather text feedback with an associated emotion.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Inline"
+        },
+        {
+          "level": "h2",
+          "text": "Feedback with Select"
+        },
+        {
+          "level": "h2",
+          "text": "Feedback with metadata"
+        },
+        {
+          "level": "h2",
+          "text": "Feedback with prefix"
+        },
+        {
+          "level": "h2",
+          "text": "Feedback with suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        }
+      ],
+      "inline_code": [
+        "?",
+        "Bug",
+        "Documentation",
+        "Feedback",
+        "Feedback on Imports",
+        "How did the import go?",
+        "Pricing",
+        "Report a Bug",
+        "Your feedback...",
+        "copy",
+        "label",
+        "please",
+        "we’re sorry"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/feedback"
+    },
+    {
+      "name": "Fieldset",
+      "slug": "fieldset",
+      "page_slug": "fieldset",
+      "path": "/geist/fieldset",
+      "fragment": null,
+      "url": "https://vercel.com/geist/fieldset",
+      "category": "components",
+      "order": 46,
+      "title": "Fieldset",
+      "description": "Groups related form controls inside a bordered card with optional footer actions.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "With Long Content"
+        },
+        {
+          "level": "h2",
+          "text": "Multiple Fieldsets"
+        },
+        {
+          "level": "h2",
+          "text": "Without Footer"
+        },
+        {
+          "level": "h2",
+          "text": "Without Title"
+        },
+        {
+          "level": "h2",
+          "text": "With Error Text"
+        },
+        {
+          "level": "h2",
+          "text": "With Warning Text"
+        },
+        {
+          "level": "h2",
+          "text": "With Disabled Wall"
+        },
+        {
+          "level": "h2",
+          "text": "Error Type"
+        },
+        {
+          "level": "h2",
+          "text": "Warning Type"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/fieldset"
+    },
+    {
+      "name": "File Tree",
+      "slug": "file-tree",
+      "page_slug": "file-tree",
+      "path": "/geist/file-tree",
+      "fragment": null,
+      "url": "https://vercel.com/geist/file-tree",
+      "category": "components",
+      "order": 47,
+      "title": "File Tree",
+      "description": "Display a hierarchical directory structure with expandable folders and files, useful for illustrating project layouts.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/file-tree"
+    },
+    {
+      "name": "Gauge",
+      "slug": "gauge",
+      "page_slug": "gauge",
+      "path": "/geist/gauge",
+      "fragment": null,
+      "url": "https://vercel.com/geist/gauge",
+      "category": "components",
+      "order": 48,
+      "title": "Gauge",
+      "description": "A circular visual for conveying a percentage.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Label"
+        },
+        {
+          "level": "h2",
+          "text": "Default color scale"
+        },
+        {
+          "level": "h2",
+          "text": "Custom color range"
+        },
+        {
+          "level": "h2",
+          "text": "Custom secondary color"
+        },
+        {
+          "level": "h2",
+          "text": "Arc priority"
+        },
+        {
+          "level": "h2",
+          "text": "Indeterminate"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "%",
+        ">=80%",
+        ">=95%",
+        "Build Cache Hit Rate",
+        "Calculating usage…",
+        "Uptime · 99.97%",
+        "arc=\"equal\"",
+        "aria-labelledby",
+        "aria-valuemax",
+        "aria-valuemin",
+        "aria-valuenow",
+        "children",
+        "equal",
+        "indeterminate",
+        "primary",
+        "role=\"progressbar\"",
+        "showValue"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/gauge"
+    },
+    {
+      "name": "Input",
+      "slug": "input",
+      "page_slug": "input",
+      "path": "/geist/input",
+      "fragment": null,
+      "url": "https://vercel.com/geist/input",
+      "category": "components",
+      "order": 50,
+      "title": "Input",
+      "description": "Retrieve text input from a user.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Prefix and suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Search"
+        },
+        {
+          "level": "h2",
+          "text": "⌘K"
+        },
+        {
+          "level": "h2",
+          "text": "Error"
+        },
+        {
+          "level": "h2",
+          "text": "Label"
+        },
+        {
+          "level": "h2",
+          "text": "Rounded prefix and suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Rounded prefix and suffix without styling"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<Button shape=\"circle\" svgOnly aria-label=\"…\">",
+        "<Input>",
+        "<SearchInput>",
+        "Code must be 6 digits.",
+        "Domain",
+        "Enter your project name",
+        "Environment Variable Name",
+        "InputPropsWithStringLabelAndId",
+        "Project Name",
+        "Project name is required.",
+        "Search projects",
+        "SearchInput",
+        "aria-describedby",
+        "disabled",
+        "error",
+        "example.com",
+        "id",
+        "label",
+        "my-awesome-project",
+        "please",
+        "search"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/input"
+    },
+    {
+      "name": "Keyboard Input",
+      "slug": "keyboard-input",
+      "page_slug": "keyboard-input",
+      "path": "/geist/keyboard-input",
+      "fragment": null,
+      "url": "https://vercel.com/geist/keyboard-input",
+      "category": "components",
+      "order": 51,
+      "title": "Keyboard Input",
+      "description": "Display keyboard input that triggers an action.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Modifiers"
+        },
+        {
+          "level": "h2",
+          "text": "Combination"
+        },
+        {
+          "level": "h2",
+          "text": "Small"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "7",
+        "<Kbd>",
+        "<Kbd>Cmd+K</Kbd>",
+        "Ctrl",
+        "Enter",
+        "Esc",
+        "K",
+        "Press <Kbd meta>K</Kbd> to open the command menu.",
+        "alt",
+        "children",
+        "ctrl",
+        "meta",
+        "or",
+        "shift",
+        "small",
+        "the ⌘ K shortcut",
+        "⌘"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/keyboard-input"
+    },
+    {
+      "name": "Label",
+      "slug": "label",
+      "page_slug": "label",
+      "path": "/geist/label",
+      "fragment": null,
+      "url": "https://vercel.com/geist/label",
+      "category": "components",
+      "order": 52,
+      "title": "Label",
+      "description": "Accessible text label for form controls.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With Input"
+        },
+        {
+          "level": "h2",
+          "text": "Bypass Casing"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/label"
+    },
+    {
+      "name": "Load More Button",
+      "slug": "load-more-button",
+      "page_slug": "load-more-button",
+      "path": "/geist/load-more-button",
+      "fragment": null,
+      "url": "https://vercel.com/geist/load-more-button",
+      "category": "components",
+      "order": 53,
+      "title": "Load More Button",
+      "description": "A full-width button used to append more items to a paginated list, with loading and styling variants.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Loading"
+        },
+        {
+          "level": "h2",
+          "text": "No Gap"
+        },
+        {
+          "level": "h2",
+          "text": "No Border Radius"
+        },
+        {
+          "level": "h2",
+          "text": "Custom Text"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/load-more-button"
+    },
+    {
+      "name": "Loading Dots",
+      "slug": "loading-dots",
+      "page_slug": "loading-dots",
+      "path": "/geist/loading-dots",
+      "fragment": null,
+      "url": "https://vercel.com/geist/loading-dots",
+      "category": "components",
+      "order": 54,
+      "title": "Loading Dots",
+      "description": "Indicate an action running in the background.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With text"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Building<LoadingDots />",
+        "Deploying",
+        "Saved<LoadingDots />",
+        "Saving",
+        "Saving<LoadingDots />",
+        "Uploading",
+        "aria-label",
+        "aria-live=\"polite\"",
+        "loading",
+        "prefers-reduced-motion",
+        "size"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/loading-dots"
+    },
+    {
+      "name": "Menu",
+      "slug": "menu",
+      "page_slug": "menu",
+      "path": "/geist/menu",
+      "fragment": null,
+      "url": "https://vercel.com/geist/menu",
+      "category": "components",
+      "order": 55,
+      "title": "Menu",
+      "description": "Dropdown menu opened via button. Supports typeahead and keyboard navigation.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With chevron"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled items"
+        },
+        {
+          "level": "h2",
+          "text": "Locked items"
+        },
+        {
+          "level": "h2",
+          "text": "Link items"
+        },
+        {
+          "level": "h2",
+          "text": "Custom trigger"
+        },
+        {
+          "level": "h2",
+          "text": "Prefix and suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Menu position"
+        },
+        {
+          "level": "h2",
+          "text": "With section"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Delete",
+        "Delete Project",
+        "Duplicate Deployment",
+        "Edit",
+        "MenuItemLocked",
+        "MenuSection",
+        "MenuSection title",
+        "Recent Projects",
+        "Rename",
+        "Rename Project",
+        "Rename…",
+        "Transfer to Team…",
+        "Verb + Noun",
+        "Workspace",
+        "…",
+        "⌘K"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/menu"
+    },
+    {
+      "name": "MiddleTruncate",
+      "slug": "middle-truncate",
+      "page_slug": "middle-truncate",
+      "path": "/geist/middle-truncate",
+      "fragment": null,
+      "url": "https://vercel.com/geist/middle-truncate",
+      "category": "components",
+      "order": 56,
+      "title": "MiddleTruncate",
+      "description": "Truncates text in the middle, preserving the start and end of the string for maximum readability.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Examples"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "apps/…/page.tsx",
+        "aria-label",
+        "dpl_…abc123",
+        "onCopy",
+        "text-overflow: ellipsis",
+        "…"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/middle-truncate"
+    },
+    {
+      "name": "Modal",
+      "slug": "modal",
+      "page_slug": "modal",
+      "path": "/geist/modal",
+      "fragment": null,
+      "url": "https://vercel.com/geist/modal",
+      "category": "components",
+      "order": 57,
+      "title": "Modal",
+      "description": "Display popup content that requires attention or provides additional information.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Sticky"
+        },
+        {
+          "level": "h2",
+          "text": "Single button"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled actions"
+        },
+        {
+          "level": "h2",
+          "text": "Inset"
+        },
+        {
+          "level": "h2",
+          "text": "Control initial focus"
+        },
+        {
+          "level": "h2",
+          "text": "Focus an input on open"
+        },
+        {
+          "level": "h2",
+          "text": "Mobile sheet with inputs"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Cancel",
+        "Close",
+        "Confirm",
+        "Delete Project",
+        "Done",
+        "Modal.P",
+        "Modal.Title",
+        "OK",
+        "Project deleted",
+        "Some effects cannot be undone.",
+        "This cannot be undone.",
+        "Transfer Project",
+        "Transfer Project?",
+        "Verb + Noun",
+        "aria-labelledby"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/modal"
+    },
+    {
+      "name": "Multi Select",
+      "slug": "multi-select",
+      "page_slug": "multi-select",
+      "path": "/geist/multi-select",
+      "fragment": null,
+      "url": "https://vercel.com/geist/multi-select",
+      "category": "components",
+      "order": 58,
+      "title": "Multi Select",
+      "description": "A keyboard-navigable dropdown for selecting multiple items with advanced focus management.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Select Actions"
+        },
+        {
+          "level": "h2",
+          "text": "Keyboard Navigation"
+        },
+        {
+          "level": "h2",
+          "text": "Controlled State"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "3 regions selected",
+        "<MultiSelect>",
+        "No results",
+        "No {items} match \"{query}\"",
+        "Select",
+        "Select All",
+        "Select Only",
+        "Select us-east-1",
+        "aria-label"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/multi-select"
+    },
+    {
+      "name": "Note",
+      "slug": "note",
+      "page_slug": "note",
+      "path": "/geist/note",
+      "fragment": null,
+      "url": "https://vercel.com/geist/note",
+      "category": "components",
+      "order": 59,
+      "title": "Note",
+      "description": "Display text that requires attention or provides additional information.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Action"
+        },
+        {
+          "level": "h2",
+          "text": "Success"
+        },
+        {
+          "level": "h2",
+          "text": "Error"
+        },
+        {
+          "level": "h2",
+          "text": "Warning"
+        },
+        {
+          "level": "h2",
+          "text": "Secondary"
+        },
+        {
+          "level": "h2",
+          "text": "Violet"
+        },
+        {
+          "level": "h2",
+          "text": "Cyan"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Labels"
+        },
+        {
+          "level": "h3",
+          "text": "Default label"
+        },
+        {
+          "level": "h3",
+          "text": "Custom label"
+        },
+        {
+          "level": "h3",
+          "text": "No label"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        }
+      ],
+      "inline_code": [
+        "Changing this region restarts all functions.",
+        "FYI",
+        "Heads Up",
+        "Note",
+        "Plan Limit",
+        "Rate Limit",
+        "Region Change",
+        "action",
+        "children",
+        "error",
+        "label",
+        "secondary",
+        "success",
+        "type",
+        "type=\"info\"",
+        "type=\"secondary\"",
+        "warning"
+      ],
+      "packages": [
+        "@vercel/geistcn/components",
+        "@vercel/geistcn/utils/use-type"
+      ],
+      "final_url": "https://vercel.com/geist/note"
+    },
+    {
+      "name": "Pagination",
+      "slug": "pagination",
+      "page_slug": "pagination",
+      "path": "/geist/pagination",
+      "fragment": null,
+      "url": "https://vercel.com/geist/pagination",
+      "category": "components",
+      "order": 60,
+      "title": "Pagination",
+      "description": "Navigate to the previous or next page.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "Deploy Hooks",
+        "Environment Variables",
+        "Go to",
+        "Go to {direction} page: {title}",
+        "Next",
+        "Page 3 of 10",
+        "Previous",
+        "next.title",
+        "previous.title"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/pagination"
+    },
+    {
+      "name": "Phone",
+      "slug": "phone",
+      "page_slug": "phone",
+      "path": "/geist/phone",
+      "fragment": null,
+      "url": "https://vercel.com/geist/phone",
+      "category": "components",
+      "order": 61,
+      "title": "Phone",
+      "description": "The Phone component lets you showcase website screenshots or other content within a realistic phone-style frame.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Composition"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Vercel dashboard on iPhone",
+        "aria-hidden=\"true\"",
+        "prefers-reduced-motion"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/phone"
+    },
+    {
+      "name": "Pill",
+      "slug": "badge#pill",
+      "page_slug": "badge",
+      "path": "/geist/badge",
+      "fragment": "pill",
+      "url": "https://vercel.com/geist/badge#pill",
+      "category": "components",
+      "order": 62,
+      "title": "Badge",
+      "description": "A label that emphasizes an element that requires attention, or helps categorize with other similar elements.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Variants"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "With icons"
+        },
+        {
+          "level": "h2",
+          "text": "Pill"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "-subtle",
+        "<Badge />",
+        "Active",
+        "Alpha",
+        "Alpha: API may change before GA",
+        "Beta",
+        "Canceled",
+        "Cancelled",
+        "Currently Active",
+        "Deployed",
+        "Early Access",
+        "Enterprise Trial",
+        "Live",
+        "Pending",
+        "Pro",
+        "Prod",
+        "Production",
+        "You are on Pro",
+        "amber",
+        "blue",
+        "gray",
+        "green",
+        "icon",
+        "onClick",
+        "pill",
+        "red",
+        "title"
+      ],
+      "packages": [
+        "@vercel/geistcn/components",
+        "@vercel/geistcn/utils"
+      ],
+      "final_url": "https://vercel.com/geist/badge"
+    },
+    {
+      "name": "Progress",
+      "slug": "progress",
+      "page_slug": "progress",
+      "path": "/geist/progress",
+      "fragment": null,
+      "url": "https://vercel.com/geist/progress",
+      "category": "components",
+      "order": 63,
+      "title": "Progress",
+      "description": "Display progress relative to a limit or related to a task.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Custom max"
+        },
+        {
+          "level": "h2",
+          "text": "Dynamic colors"
+        },
+        {
+          "level": "h2",
+          "text": "Themed"
+        },
+        {
+          "level": "h2",
+          "text": "With Stops"
+        },
+        {
+          "level": "h2",
+          "text": "Widths"
+        },
+        {
+          "level": "h2",
+          "text": "Heights"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "100",
+        "<label>",
+        "Build complete",
+        "Building deployment…",
+        "Building · 1.2 GB / 4 GB",
+        "Saving",
+        "Step 2 of 4 · Building",
+        "Tests complete",
+        "Uploading 12 of 30 files",
+        "aria-label",
+        "aria-labelledby",
+        "aria-valuemax",
+        "aria-valuemin",
+        "aria-valuenow",
+        "ariaLabel",
+        "complete",
+        "dynamic colors",
+        "max",
+        "max={files.length}",
+        "role=\"progressbar\"",
+        "successfully",
+        "value / max"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/progress"
+    },
+    {
+      "name": "Project Banner",
+      "slug": "project-banner",
+      "page_slug": "project-banner",
+      "path": "/geist/project-banner",
+      "fragment": null,
+      "url": "https://vercel.com/geist/project-banner",
+      "category": "components",
+      "order": 64,
+      "title": "Project Banner",
+      "description": "Used for temporary, project-wide notifications that require resolution",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Success"
+        },
+        {
+          "level": "h2",
+          "text": "Warning"
+        },
+        {
+          "level": "h2",
+          "text": "Error"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        }
+      ],
+      "inline_code": [
+        "Heads up",
+        "Production deployments are paused on my-project",
+        "Reactivate Project",
+        "Review Tokens",
+        "Update Payment Method",
+        "Verb + Noun",
+        "Your Pro trial expires in 3 days.",
+        "callToAction",
+        "callToAction.label",
+        "error",
+        "gray",
+        "label",
+        "success",
+        "variant",
+        "warning"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/project-banner"
+    },
+    {
+      "name": "Radio",
+      "slug": "radio",
+      "page_slug": "radio",
+      "path": "/geist/radio",
+      "fragment": null,
+      "url": "https://vercel.com/geist/radio",
+      "category": "components",
+      "order": 65,
+      "title": "Radio",
+      "description": "Provides single user input from a selection of options.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Radio disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Radio required"
+        },
+        {
+          "level": "h2",
+          "text": "Radio headless"
+        },
+        {
+          "level": "h2",
+          "text": "Radio standalone"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<fieldset>",
+        "<legend>",
+        "Available on Pro and Enterprise",
+        "Billing Cycle",
+        "Deployment Region",
+        "Monthly",
+        "Pay yearly",
+        "RadioGroup",
+        "RadioGroup.Item",
+        "Yearly",
+        "aria-label",
+        "aria-labelledby"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/radio"
+    },
+    {
+      "name": "Relative Time Card",
+      "slug": "relative-time-card",
+      "page_slug": "relative-time-card",
+      "path": "/geist/relative-time-card",
+      "fragment": null,
+      "url": "https://vercel.com/geist/relative-time-card",
+      "category": "components",
+      "order": 66,
+      "title": "Relative Time Card",
+      "description": "Popover to show a given date in local time.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "2m",
+        "2m ago",
+        "2m ago ago",
+        "5h",
+        "5h ago",
+        "<RelativeTimeCard /> ago",
+        "<RelativeTimeCard>",
+        "Just now",
+        "Last deploy <RelativeTimeCard date={ts} />",
+        "Mar 14, 2026",
+        "Pending",
+        "Queued",
+        "Yesterday",
+        "ago",
+        "children",
+        "date"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/relative-time-card"
+    },
+    {
+      "name": "Scroller",
+      "slug": "scroller",
+      "page_slug": "scroller",
+      "path": "/geist/scroller",
+      "fragment": null,
+      "url": "https://vercel.com/geist/scroller",
+      "category": "components",
+      "order": 67,
+      "title": "Scroller",
+      "description": "Display an overflowing list of items.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Vertical"
+        },
+        {
+          "level": "h2",
+          "text": "Horizontal"
+        },
+        {
+          "level": "h2",
+          "text": "Free"
+        },
+        {
+          "level": "h2",
+          "text": "Vertical with buttons"
+        },
+        {
+          "level": "h2",
+          "text": "Horizontal with buttons"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Next",
+        "Previous",
+        "Scroll customer logos left",
+        "aria-label",
+        "free",
+        "horizontal",
+        "vertical"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/scroller"
+    },
+    {
+      "name": "Search Input",
+      "slug": "search-input",
+      "page_slug": "search-input",
+      "path": "/geist/search-input",
+      "fragment": null,
+      "url": "https://vercel.com/geist/search-input",
+      "category": "components",
+      "order": 68,
+      "title": "Search Input",
+      "description": "Pre-configured search input with a magnifying glass icon and clear button.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With Cmdk"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Loading"
+        },
+        {
+          "level": "h2",
+          "text": "Custom Prefix"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/search-input"
+    },
+    {
+      "name": "Select",
+      "slug": "select",
+      "page_slug": "select",
+      "path": "/geist/select",
+      "fragment": null,
+      "url": "https://vercel.com/geist/select",
+      "category": "components",
+      "order": 69,
+      "title": "Select",
+      "description": "Display a dropdown list of items.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Prefix and suffix"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Error"
+        },
+        {
+          "level": "h2",
+          "text": "Label"
+        },
+        {
+          "level": "h2",
+          "text": "With options"
+        },
+        {
+          "level": "h2",
+          "text": "Required"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        ".Group",
+        "<Select>",
+        "<optgroup>",
+        "Choose one…",
+        "Framework",
+        "Next.js",
+        "NextJS",
+        "Pick",
+        "Region",
+        "Select a framework",
+        "Select a framework.",
+        "error"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/select"
+    },
+    {
+      "name": "Separator",
+      "slug": "separator",
+      "page_slug": "separator",
+      "path": "/geist/separator",
+      "fragment": null,
+      "url": "https://vercel.com/geist/separator",
+      "category": "components",
+      "order": 70,
+      "title": "Separator",
+      "description": "A visual divider that separates content into distinct sections, with support for horizontal and vertical orientations.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Horizontal"
+        },
+        {
+          "level": "h3",
+          "text": "Section 1"
+        },
+        {
+          "level": "h3",
+          "text": "Section 2"
+        },
+        {
+          "level": "h2",
+          "text": "Vertical"
+        },
+        {
+          "level": "h2",
+          "text": "Orientation Variants"
+        },
+        {
+          "level": "h2",
+          "text": "Accessibility Variants"
+        },
+        {
+          "level": "h2",
+          "text": "Custom Styling"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/separator"
+    },
+    {
+      "name": "Sheet",
+      "slug": "sheet",
+      "page_slug": "sheet",
+      "path": "/geist/sheet",
+      "fragment": null,
+      "url": "https://vercel.com/geist/sheet",
+      "category": "components",
+      "order": 71,
+      "title": "Sheet",
+      "description": "Display content in a side panel that slides in from the edge of the screen.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With Side"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Close",
+        "Deployment Details",
+        "Member Profile",
+        "Verb + Noun",
+        "aria-describedby",
+        "aria-label=\"Close\"",
+        "aria-labelledby",
+        "left",
+        "modal=false",
+        "right",
+        "side"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/sheet"
+    },
+    {
+      "name": "Show more",
+      "slug": "show-more",
+      "page_slug": "show-more",
+      "path": "/geist/show-more",
+      "fragment": null,
+      "url": "https://vercel.com/geist/show-more",
+      "category": "components",
+      "order": 72,
+      "title": "Show more",
+      "description": "Styling component to show expanded or collapsed content.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Expanded"
+        },
+        {
+          "level": "h2",
+          "text": "No border"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "<button>",
+        "Show 12 More",
+        "Show Less",
+        "aria-controls",
+        "aria-expanded"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/show-more"
+    },
+    {
+      "name": "Skeleton",
+      "slug": "skeleton",
+      "page_slug": "skeleton",
+      "path": "/geist/skeleton",
+      "fragment": null,
+      "url": "https://vercel.com/geist/skeleton",
+      "category": "components",
+      "order": 73,
+      "title": "Skeleton",
+      "description": "Display a skeleton whilst another component is loading.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default with set width"
+        },
+        {
+          "level": "h2",
+          "text": "Default with box height"
+        },
+        {
+          "level": "h2",
+          "text": "Wrapping children"
+        },
+        {
+          "level": "h2",
+          "text": "Wrapping children with fixed size"
+        },
+        {
+          "level": "h2",
+          "text": "Pill"
+        },
+        {
+          "level": "h2",
+          "text": "Rounded"
+        },
+        {
+          "level": "h2",
+          "text": "Squared"
+        },
+        {
+          "level": "h2",
+          "text": "No animation"
+        },
+        {
+          "level": "h2",
+          "text": "Button"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "aria-busy=\"true\"",
+        "aria-live=\"polite\"",
+        "height",
+        "no animation",
+        "pill",
+        "prefers-reduced-motion",
+        "rounded",
+        "squared",
+        "width"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/skeleton"
+    },
+    {
+      "name": "Slider",
+      "slug": "slider",
+      "page_slug": "slider",
+      "path": "/geist/slider",
+      "fragment": null,
+      "url": "https://vercel.com/geist/slider",
+      "category": "components",
+      "order": 74,
+      "title": "Slider",
+      "description": "Input to select a value from a given range.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Range with inputs"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled range with inputs"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "1",
+        "10%",
+        "47.83291",
+        "5",
+        "<label htmlFor>",
+        "Sample Rate · 44 kHz",
+        "aria-label",
+        "max",
+        "min"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/slider"
+    },
+    {
+      "name": "Snippet",
+      "slug": "snippet",
+      "page_slug": "snippet",
+      "path": "/geist/snippet",
+      "fragment": null,
+      "url": "https://vercel.com/geist/snippet",
+      "category": "components",
+      "order": 75,
+      "title": "Snippet",
+      "description": "Display a snippet of copyable code for the command line.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Inverted"
+        },
+        {
+          "level": "h2",
+          "text": "Multi line"
+        },
+        {
+          "level": "h2",
+          "text": "No prompt"
+        },
+        {
+          "level": "h2",
+          "text": "Callback"
+        },
+        {
+          "level": "h2",
+          "text": "Variants"
+        },
+        {
+          "level": "h2",
+          "text": "Controlled Copied State"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "$",
+        "$ $ vercel deploy",
+        "<span>",
+        "CodeBlock",
+        "InlineCode",
+        "Please",
+        "Run vercel link to fetch env vars",
+        "copied",
+        "copyText",
+        "onCopy",
+        "placeholder",
+        "prompt={false}",
+        "text",
+        "text=\"\"",
+        "text=\"$ vercel deploy\""
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/snippet"
+    },
+    {
+      "name": "Spinner",
+      "slug": "spinner",
+      "page_slug": "spinner",
+      "path": "/geist/spinner",
+      "fragment": null,
+      "url": "https://vercel.com/geist/spinner",
+      "category": "components",
+      "order": 76,
+      "title": "Spinner",
+      "description": "Indicate an action running in the background. Unlike the loading dots, this should generally be used to indicate loading feedback in response to a user action, like for buttons, pagination, etc.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default size"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Colors"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Deploying…",
+        "Verifying…",
+        "aria-busy=\"true\"",
+        "loading",
+        "prefers-reduced-motion"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/spinner"
+    },
+    {
+      "name": "Split Button",
+      "slug": "split-button",
+      "page_slug": "split-button",
+      "path": "/geist/split-button",
+      "fragment": null,
+      "url": "https://vercel.com/geist/split-button",
+      "category": "components",
+      "order": 77,
+      "title": "Split Button",
+      "description": "A button that offers a primary interaction coupled with a dropdown menu offering additional actions.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Menu Alignment"
+        },
+        {
+          "level": "h2",
+          "text": "Icon"
+        },
+        {
+          "level": "h2",
+          "text": "Title with Icon"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "Deploy",
+        "Deploy to Preview",
+        "Deploy to Production",
+        "More deploy options",
+        "Promote to Production",
+        "Rollback Deployment",
+        "Verb + Noun",
+        "aria-label",
+        "bottom-end",
+        "default",
+        "menuAlignment=\"bottom-start\"",
+        "menuButtonLabel",
+        "secondary",
+        "type"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/split-button"
+    },
+    {
+      "name": "Status Dot",
+      "slug": "status-dot",
+      "page_slug": "status-dot",
+      "path": "/geist/status-dot",
+      "fragment": null,
+      "url": "https://vercel.com/geist/status-dot",
+      "category": "components",
+      "order": 78,
+      "title": "Status Dot",
+      "description": "Display an indicator of deployment status.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Label"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "\"This deployment\"",
+        "BUILDING",
+        "Building",
+        "Building · 12s ago",
+        "Error",
+        "QUEUED",
+        "QUEUED | BUILDING | READY | ERROR | CANCELED | DELETED",
+        "Ready",
+        "Status: Ready",
+        "aria-hidden",
+        "aria-label",
+        "aria-label=\"status\"",
+        "label",
+        "state",
+        "titlePrefix",
+        "titlePrefix=\"vercel-site production\""
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/status-dot"
+    },
+    {
+      "name": "Switch",
+      "slug": "switch",
+      "page_slug": "switch",
+      "path": "/geist/switch",
+      "fragment": null,
+      "url": "https://vercel.com/geist/switch",
+      "category": "components",
+      "order": 79,
+      "title": "Switch",
+      "description": "Choose between a set of options.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Full width"
+        },
+        {
+          "level": "h2",
+          "text": "Tooltip"
+        },
+        {
+          "level": "h2",
+          "text": "Icon"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "Output",
+        "Show output",
+        "Source",
+        "Switch.Control",
+        "checked",
+        "defaultChecked",
+        "geist-sr-only",
+        "icon",
+        "label",
+        "name"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/switch"
+    },
+    {
+      "name": "Table",
+      "slug": "table",
+      "page_slug": "table",
+      "path": "/geist/table",
+      "fragment": null,
+      "url": "https://vercel.com/geist/table",
+      "category": "components",
+      "order": 80,
+      "title": "Table",
+      "description": "A semantic HTML table component",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Basic table"
+        },
+        {
+          "level": "h2",
+          "text": "Striped table"
+        },
+        {
+          "level": "h2",
+          "text": "Bordered table"
+        },
+        {
+          "level": "h2",
+          "text": "Interactive table"
+        },
+        {
+          "level": "h2",
+          "text": "Full featured table"
+        },
+        {
+          "level": "h2",
+          "text": "Virtualized table"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        }
+      ],
+      "inline_code": [
+        "21–40 of 142",
+        "2m ago",
+        "5h ago",
+        "<Table.Body>",
+        "<Table.Head>",
+        "<Table>",
+        "Created",
+        "Last Used",
+        "Mar 14, 2026",
+        "N/A",
+        "Next",
+        "Page 2 of 7",
+        "Previous",
+        "Requests (7d)",
+        "Status",
+        "null",
+        "tabular-nums",
+        "—"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/table"
+    },
+    {
+      "name": "Tabs",
+      "slug": "tabs",
+      "page_slug": "tabs",
+      "path": "/geist/tabs",
+      "fragment": null,
+      "url": "https://vercel.com/geist/tabs",
+      "category": "components",
+      "order": 81,
+      "title": "Tabs",
+      "description": "Display tab content.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Disable specific tabs"
+        },
+        {
+          "level": "h2",
+          "text": "With icons"
+        },
+        {
+          "level": "h2",
+          "text": "Secondary"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Logs",
+        "Logs (12)",
+        "Only visible to project owners.",
+        "Overview",
+        "Settings",
+        "View Logs",
+        "aria-label",
+        "aria-label=\"Sections\"",
+        "tabs[].title",
+        "tabs[].tooltip",
+        "tooltip"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/tabs"
+    },
+    {
+      "name": "Text With Copy Button",
+      "slug": "text-with-copy-button",
+      "page_slug": "text-with-copy-button",
+      "path": "/geist/text-with-copy-button",
+      "fragment": null,
+      "url": "https://vercel.com/geist/text-with-copy-button",
+      "category": "components",
+      "order": 82,
+      "title": "Text With Copy Button",
+      "description": "Display text alongside a button that copies the text to the clipboard.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "With Small and Tertiary"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/text-with-copy-button"
+    },
+    {
+      "name": "Textarea",
+      "slug": "textarea",
+      "page_slug": "textarea",
+      "path": "/geist/textarea",
+      "fragment": null,
+      "url": "https://vercel.com/geist/textarea",
+      "category": "components",
+      "order": 83,
+      "title": "Textarea",
+      "description": "Retrieve multi-line user input.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Error"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Read Only"
+        },
+        {
+          "level": "h2",
+          "text": "Rows"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "<Textarea>",
+        "<p>",
+        "Description",
+        "Description is required.",
+        "Enter a description",
+        "Release Notes",
+        "Release notes can’t exceed 500 characters.",
+        "aria-describedby",
+        "error",
+        "please",
+        "required",
+        "rows"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/textarea"
+    },
+    {
+      "name": "Theme Switcher",
+      "slug": "theme-switcher",
+      "page_slug": "theme-switcher",
+      "path": "/geist/theme-switcher",
+      "fragment": null,
+      "url": "https://vercel.com/geist/theme-switcher",
+      "category": "components",
+      "order": 84,
+      "title": "Theme Switcher",
+      "description": "Component that allows users to switch between light and dark themes.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Small"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "GeistProvider",
+        "aria-label",
+        "dark",
+        "disabled",
+        "forcedTheme",
+        "light",
+        "next-themes",
+        "small",
+        "system"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/theme-switcher"
+    },
+    {
+      "name": "Toast",
+      "slug": "toast",
+      "page_slug": "toast",
+      "path": "/geist/toast",
+      "fragment": null,
+      "url": "https://vercel.com/geist/toast",
+      "category": "components",
+      "order": 85,
+      "title": "Toast",
+      "description": "A succinct message that is displayed temporarily.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Multi-line"
+        },
+        {
+          "level": "h2",
+          "text": "With jsx"
+        },
+        {
+          "level": "h2",
+          "text": "With a link"
+        },
+        {
+          "level": "h2",
+          "text": "Preserve"
+        },
+        {
+          "level": "h2",
+          "text": "Action"
+        },
+        {
+          "level": "h2",
+          "text": "Undo"
+        },
+        {
+          "level": "h2",
+          "text": "Success"
+        },
+        {
+          "level": "h2",
+          "text": "Warning"
+        },
+        {
+          "level": "h2",
+          "text": "Error"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "Blob deleted",
+        "Bring Back",
+        "Build failed",
+        "Cancel",
+        "Couldn’t",
+        "Couldn’t verify domain. Try again.",
+        "Delete Project",
+        "Deployment canceled",
+        "Domain added",
+        "Environment variable saved",
+        "Failed to",
+        "Project archived",
+        "Project deleted",
+        "Project removed",
+        "Restore",
+        "Undo",
+        "aria-live=\"polite\"",
+        "assertive",
+        "preserve",
+        "success",
+        "successfully",
+        "toasts.message('Deployment canceled')",
+        "toasts.warning(...)",
+        "{Noun} {past-participle}"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/toast"
+    },
+    {
+      "name": "Toggle",
+      "slug": "toggle",
+      "page_slug": "toggle",
+      "path": "/geist/toggle",
+      "fragment": null,
+      "url": "https://vercel.com/geist/toggle",
+      "category": "components",
+      "order": 86,
+      "title": "Toggle",
+      "description": "Displays a boolean value.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "Disabled"
+        },
+        {
+          "level": "h2",
+          "text": "Sizes"
+        },
+        {
+          "level": "h2",
+          "text": "Custom Color"
+        },
+        {
+          "level": "h2",
+          "text": "With Label"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        }
+      ],
+      "inline_code": [
+        "Auto-Cancel Builds",
+        "Enable Password Protection",
+        "Password Protection",
+        "Password protection enabled",
+        "Save",
+        "aria-label",
+        "aria-labelledby",
+        "checked",
+        "children",
+        "label",
+        "labelCasing=\"normal\"",
+        "labelCasing=\"title\"",
+        "onChange",
+        "useToasts().success(…)"
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/toggle"
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip",
+      "page_slug": "tooltip",
+      "path": "/geist/tooltip",
+      "fragment": null,
+      "url": "https://vercel.com/geist/tooltip",
+      "category": "components",
+      "order": 87,
+      "title": "Tooltip",
+      "description": "A set of headings, vertically stacked, that each reveal an related section of content. Commonly referred to as an accordion.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "No delay"
+        },
+        {
+          "level": "h2",
+          "text": "Box align"
+        },
+        {
+          "level": "h2",
+          "text": "Custom content"
+        },
+        {
+          "level": "h2",
+          "text": "Custom type"
+        },
+        {
+          "level": "h2",
+          "text": "Components"
+        },
+        {
+          "level": "h2",
+          "text": "Other"
+        },
+        {
+          "level": "h2",
+          "text": "Best Practices"
+        },
+        {
+          "level": "h3",
+          "text": "When to use"
+        },
+        {
+          "level": "h3",
+          "text": "Behavior"
+        },
+        {
+          "level": "h3",
+          "text": "Content"
+        },
+        {
+          "level": "h3",
+          "text": "Accessibility"
+        }
+      ],
+      "inline_code": [
+        "<label>",
+        "Alpha",
+        "Beta",
+        "Early Access",
+        "Experimental",
+        "Rate Limit",
+        "aria-label",
+        "text",
+        "text=\"Click to override\"",
+        "text=\"Rate Limit\"",
+        "{Label}: {one-line meaning}. {Specific limit}."
+      ],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/tooltip"
+    },
+    {
+      "name": "Video",
+      "slug": "video",
+      "page_slug": "video",
+      "path": "/geist/video",
+      "fragment": null,
+      "url": "https://vercel.com/geist/video",
+      "category": "components",
+      "order": 88,
+      "title": "Video",
+      "description": "Embed a video with built-in playback controls and lazy loading support.",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Default"
+        },
+        {
+          "level": "h2",
+          "text": "No Loop"
+        },
+        {
+          "level": "h2",
+          "text": "No Controls"
+        }
+      ],
+      "inline_code": [],
+      "packages": [
+        "@vercel/geistcn/components"
+      ],
+      "final_url": "https://vercel.com/geist/video"
+    }
+  ]
+}

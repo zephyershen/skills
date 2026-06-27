@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Changelist"
+  short_description: "Record project changes in local changelist folders"
+  default_prompt: "Use $project-changelist to update a project and record the changes in its local changelist folder."

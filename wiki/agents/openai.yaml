@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wiki"
+  short_description: "Query and maintain the personal LLM Wiki."
+  default_prompt: "Use $wiki to query or maintain the configured local wiki with the right workflow template."

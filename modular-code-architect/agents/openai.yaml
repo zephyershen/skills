@@ -1,0 +1,4 @@
+interface:
+  display_name: "Modular Code Architect"
+  short_description: "Design and refactor code by clear modules"
+  default_prompt: "Use $modular-code-architect to build or refactor this project with clear module boundaries."
