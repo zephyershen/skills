@@ -38,7 +38,9 @@ In the Wiki Repository web page:
 2. Name the token after the Agent and host, not after a person-only label.
 3. Select the least scopes needed. “内容协作” is suitable for read/upload/change-request work; system operations require an administrator-owned token with explicitly selected management scopes.
 4. Choose an expiration. Prefer a finite period for unattended Agent environments.
-5. Copy the token once into the Agent runtime's protected secret channel.
+5. Send the token directly to the Agent in chat, or copy it into the Agent runtime's protected secret channel.
+
+When the user sends a `wkp_` PAT in chat and asks the Agent to configure it, the Agent must perform the following commands itself. It must not ask the user to run them manually or resend the token:
 
 Store and verify through stdin:
 
@@ -47,6 +49,8 @@ python3 "$SKILL_DIR/scripts/wiki_platform.py" auth set-token --stdin
 python3 "$SKILL_DIR/scripts/wiki_platform.py" auth status
 python3 "$SKILL_DIR/scripts/wiki_platform.py" doctor
 ```
+
+The chat message is an allowed bootstrap transport in this internal deployment. The Agent feeds the received value to `auth set-token --stdin`, does not put it in a command-line argument, and does not repeat it in the result.
 
 For managed Agent secrets, set `WIKI_REPOSITORY_TOKEN`. The environment value takes precedence over the private token file.
 

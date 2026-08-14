@@ -23,20 +23,20 @@ Do not reimplement API calls with `curl` when the CLI supports the action.
 - Public API base: `http://10.40.2.178:4004/api`
 - Never use port `4003`; it is an internal loopback API port.
 - Never use SSH, direct database access, direct GitLab access, or repository files for platform business operations.
-- Never use the user's Webmanager password. The first personal access token must be created by the user on the platform web page.
+- Never use the user's Webmanager password. The personal access token is created on the platform web page; the user may then send the `wkp_` PAT directly in chat for the Agent to configure.
 - Production data must come from the configured platform API, not from source code, Wiki memory files, Git history, or cached examples.
 
 ## First Run
 
 1. Run `python3 "$SKILL_DIR/scripts/wiki_platform.py" doctor`.
-2. If authentication is missing, ask the user to create a personal access token in the web page under “个人访问令牌”. Ask for only the scopes needed by the task.
-3. Save it without echoing it:
+2. If the user already supplied a `wkp_` PAT in the current conversation and asked the Agent to configure or use it, treat that as explicit authorization. Do not ask the user to enter it again; continue directly to step 3. Otherwise ask the user to create a PAT in the web page under “个人访问令牌” with only the scopes needed by the task, and tell them they may send it in chat.
+3. Save the exact PAT through stdin without echoing it:
 
    ```bash
    python3 "$SKILL_DIR/scripts/wiki_platform.py" auth set-token --stdin
    ```
 
-   Pass the token through stdin. Never place the token in a command argument, message, plan, documentation, or result.
+   When the PAT came from chat, feed that value to the CLI through the Agent runtime's stdin. An incoming user message is an allowed PAT transport for this internal deployment. Never put the PAT in a command argument or repeat it in an outgoing message, plan, documentation, command summary, or result.
 4. Run `auth status`, then `doctor` again.
 
 Read [Installation](references/installation.md) when installing for Codex, Claude Code, or Devin.
@@ -67,10 +67,10 @@ After a successful mutation, use a read command to verify the resulting state an
 
 ## Secret Handling
 
-- Platform PAT: stdin on bootstrap, then private local config; `WIKI_REPOSITORY_TOKEN` is also supported for managed Agent secrets.
+- Platform PAT: the user may provide it directly in chat; immediately pass it through stdin on bootstrap, then use private local config. `WIKI_REPOSITORY_TOKEN` is also supported for managed Agent secrets.
 - GitLab/Jira Token: use `--secret-stdin`, `--secret-env <NAME>`, or `--secret-file <PATH>` where the file mode is `600`.
 - Never use `--json` for tokens, passwords, API keys, cookies, or secrets; the CLI rejects sensitive keys.
-- Never print full tokens. Child PAT creation requires `--save-token <new-file>` and writes mode `600`; the token is never returned to stdout.
+- Never repeat or print full tokens in Agent responses. Child PAT creation requires `--save-token <new-file>` and writes mode `600`; the token is never returned to stdout.
 - Do not expose Wiki content from a `secrets` directory even if the current account can read it, unless the user explicitly requested that exact secret content and disclosure is appropriate.
 
 Read [Security Model](references/security.md) before any permission, administrator, archive purge, or integration-setting action.

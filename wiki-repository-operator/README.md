@@ -55,6 +55,8 @@ python3 scripts/wiki_platform.py auth status
 
 Create the first `wkp_` personal access token in the Wiki Repository web page. Paste it into stdin or pipe it from a protected secret manager. The CLI stores it under `${XDG_CONFIG_HOME:-~/.config}/wiki-repository-operator/token` with mode `600`.
 
+For this internal deployment, the user may send the PAT directly to the Agent in chat. The Agent must treat that message as authorization to run `auth set-token --stdin` itself, verify with `auth status` and `doctor`, and report success without asking the user to execute a command. The Agent does not repeat the PAT in its reply.
+
 Never place the token directly after a command-line option.
 
 ## Change the server

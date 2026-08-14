@@ -22,7 +22,8 @@ A scope is necessary but never sufficient. The API rechecks current membership, 
 ## Credential rules
 
 - Never use the Webmanager password for Agent automation.
-- Never pass full secrets in argv, JSON bodies accepted by generic commands, plan text, logs, or chat output.
+- An incoming user chat message is an allowed PAT bootstrap channel when the user intentionally supplies a `wkp_` value for configuration. Treat that message as explicit authorization to configure it immediately.
+- Never pass full secrets in argv, JSON bodies accepted by generic commands, plan text, logs, or outgoing chat output. Do not repeat a chat-supplied PAT back to the user.
 - Use stdin, a managed environment variable referenced by name, or a mode-`600` secret file.
 - The CLI rejects symlinked token/config files and secret files readable by group or others.
 - The local PAT file and confirmation plans are mode `600`; their directory is mode `700`.

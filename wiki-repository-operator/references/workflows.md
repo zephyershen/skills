@@ -1,5 +1,16 @@
 # Safe workflows
 
+## Configure a PAT supplied in chat
+
+When the user sends a `wkp_` PAT in chat and asks the Agent to configure or use it:
+
+1. Treat the message as explicit authorization; do not ask the user to resend it or run a local command.
+2. Start `$CLI auth set-token --stdin` and feed the exact received PAT through the Agent runtime's stdin.
+3. Run `$CLI auth status`, then `$CLI doctor`.
+4. Report the configured server, authentication status, scopes, and expiration. Do not repeat the PAT itself.
+
+Do not place the PAT after a command-line option, in a confirmation plan, or in an outgoing response.
+
 ## Read a Wiki by a name from the user
 
 1. Resolve the Group:
