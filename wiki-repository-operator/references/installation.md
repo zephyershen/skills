@@ -1,0 +1,83 @@
+# Installation and bootstrap
+
+## Prerequisites
+
+- Python 3.10 or newer; no third-party package is required.
+- Network access from the Agent runtime to `http://10.40.2.178:4004`.
+- A Wiki Repository account already added as an enabled Wiki member.
+- A `wkp_` personal access token created by that user in the web page.
+
+The web login password is not an Agent credential and must not be placed in this Skill.
+
+## Install the complete bundle
+
+Keep the directory structure intact:
+
+```text
+wiki-repository-operator/
+├── SKILL.md
+├── scripts/wiki_platform.py
+├── scripts/wiki_repository/
+└── references/
+```
+
+Supported placements:
+
+- Claude Code personal: `~/.claude/skills/wiki-repository-operator/`
+- Claude Code project: `.claude/skills/wiki-repository-operator/`
+- Devin recommended project location: `.agents/skills/wiki-repository-operator/`
+- Codex local: `~/.codex/skills/wiki-repository-operator/`
+
+For Devin, commit the complete directory into a connected repository. For a shared Claude or Codex installation, symlink the complete directory from a centrally updated checkout.
+
+## Create the first token
+
+In the Wiki Repository web page:
+
+1. Open Account → Personal Access Tokens.
+2. Name the token after the Agent and host, not after a person-only label.
+3. Select the least scopes needed. “内容协作” is suitable for read/upload/change-request work; system operations require an administrator-owned token with explicitly selected management scopes.
+4. Choose an expiration. Prefer a finite period for unattended Agent environments.
+5. Copy the token once into the Agent runtime's protected secret channel.
+
+Store and verify through stdin:
+
+```bash
+python3 "$SKILL_DIR/scripts/wiki_platform.py" auth set-token --stdin
+python3 "$SKILL_DIR/scripts/wiki_platform.py" auth status
+python3 "$SKILL_DIR/scripts/wiki_platform.py" doctor
+```
+
+For managed Agent secrets, set `WIKI_REPOSITORY_TOKEN`. The environment value takes precedence over the private token file.
+
+## Configuration files
+
+Default directory: `${XDG_CONFIG_HOME:-~/.config}/wiki-repository-operator`
+
+- directory mode: `700`
+- `settings.json`: mode `600`, contains only the server origin
+- `token`: mode `600`, contains the platform PAT
+- `plans/*.json`: mode `600`, contains short-lived redacted confirmation plans
+
+Set `WIKI_REPOSITORY_CONFIG_DIR` to use another absolute config directory. Set `WIKI_REPOSITORY_URL` to manage the server externally; it overrides `server set`.
+
+## Change IP or URL
+
+```bash
+python3 "$SKILL_DIR/scripts/wiki_platform.py" server set 10.40.2.179
+```
+
+Bare IP input becomes `http://10.40.2.179:4004`. Complete `http://` and `https://` roots are accepted. A root ending in `/api` is normalized automatically. User information, query strings, fragments, and other paths are rejected.
+
+`server set` verifies `/service/meta`, `/api/openapi.json`, and `/api/health` before changing local configuration. Failed validation leaves the previous server unchanged.
+
+## Upgrade
+
+Update the Skill checkout, run the bundled tests, then run `doctor`:
+
+```bash
+python3 -m unittest discover -s "$SKILL_DIR/tests" -v
+python3 "$SKILL_DIR/scripts/wiki_platform.py" doctor
+```
+
+Do not preserve a modified default IP by editing source. Use `server set` or `WIKI_REPOSITORY_URL`, so future upgrades remain clean.

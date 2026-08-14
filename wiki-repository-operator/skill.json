@@ -1,0 +1,8 @@
+{
+  "name": "wiki-repository-operator",
+  "version": "1.0.0",
+  "entrypoint": "scripts/wiki_platform.py",
+  "python": ">=3.10",
+  "default_server": "http://10.40.2.178:4004",
+  "license": "Internal use"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wiki Repository Operator"
+  short_description: "Safely query and operate the Wiki platform"
+  default_prompt: "Use $wiki-repository-operator to query or operate the Wiki Repository platform through its authenticated public API."
