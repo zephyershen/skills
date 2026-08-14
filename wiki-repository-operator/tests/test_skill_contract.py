@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 
@@ -21,6 +22,17 @@ class SkillContractTests(unittest.TestCase):
 
         self.assertIn("Never put the PAT in a command argument", skill)
         self.assertIn("repeat it in an outgoing message", skill)
+
+    def test_wiki_dependency_is_pinned_and_first_use_only(self):
+        skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
+        manifest = json.loads((SKILL_DIR / "skill.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(manifest["namespace"], "global-skills")
+        self.assertEqual(manifest["version"], "1.1.0")
+        self.assertEqual(manifest["dependencies"][0]["coordinate"], "global-skills/wiki@1.0.0")
+        self.assertEqual(manifest["dependencies"][0]["install"], "first-use-once")
+        self.assertIn("later operator commands must not inspect the Wiki Skill directory", skill)
+        self.assertIn("first command still performs the user's requested command after installation", skill)
 
 
 if __name__ == "__main__":

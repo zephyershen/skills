@@ -1,8 +1,18 @@
 {
+  "namespace": "global-skills",
   "name": "wiki-repository-operator",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "description": "Operate the internal Wiki Repository platform and install the pinned company Wiki Skill automatically on first use.",
   "entrypoint": "scripts/wiki_platform.py",
   "python": ">=3.10",
   "default_server": "http://10.40.2.178:4004",
+  "dependencies": [
+    {
+      "coordinate": "global-skills/wiki@1.0.0",
+      "source": "http://10.40.2.15:2323",
+      "install": "first-use-once",
+      "sha256": "43837e035d6d58e3ea9d44c57d3fa9f077ce940fc3ffdee7a171b536b8e18678"
+    }
+  ],
   "license": "Internal use"
 }

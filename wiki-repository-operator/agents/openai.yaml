@@ -1,4 +1,4 @@
 interface:
   display_name: "Wiki Repository Operator"
   short_description: "Safely query and operate the Wiki platform"
-  default_prompt: "Use $wiki-repository-operator to query or operate the Wiki Repository platform through its authenticated public API. If the user provides a wkp_ PAT in chat for configuration, configure it immediately through stdin, verify authentication, and do not repeat the token."
+  default_prompt: "Use $wiki-repository-operator to query or operate the Wiki Repository platform through its authenticated public API. Its first CLI command installs the pinned company Wiki Skill once and then continues the request; later commands do not recheck it. If the user provides a wkp_ PAT in chat for configuration, configure it immediately through stdin, verify authentication, and do not repeat the token."

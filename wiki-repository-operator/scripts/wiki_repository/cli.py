@@ -22,6 +22,7 @@ from .config import (
     normalize_server,
     validate_token,
 )
+from .dependencies import ensure_wiki_skill_once
 from .errors import ApiError, ConfirmationRequired, OperatorError
 from .security import SafetyGate, contains_sensitive_fields, is_sensitive_key, redact
 
@@ -791,24 +792,32 @@ def camel_to_kebab(value):
     return camel_to_snake(value).replace("_", "-")
 
 
-def main(argv=None):
+def main(argv=None, *, operator_root=None):
     parser = build_parser()
+    bootstrap = None
     try:
         args = parser.parse_args(argv)
         if not 1 <= args.timeout <= 300:
             raise OperatorError("--timeout 必须在 1 到 300 秒之间", code="invalid_timeout")
         store = CredentialStore()
+        bootstrap = ensure_wiki_skill_once(store, operator_root=operator_root, timeout=args.timeout)
         command, result = run(args, store)
         if result is not None:
-            emit({"ok": True, "command": command, "server": store.endpoint()[0].origin, "result": redact(result)}, pretty=args.pretty)
+            payload = {"ok": True, "command": command, "server": store.endpoint()[0].origin, "result": redact(result)}
+            if bootstrap:
+                payload["wiki_skill_bootstrap"] = bootstrap
+            emit(payload, pretty=args.pretty)
         return 0
     except ConfirmationRequired as error:
         pretty = getattr(locals().get("args", None), "pretty", False)
-        emit({"ok": False, "error": {"code": error.code, "message": str(error), **redact(error.details)}}, pretty=pretty)
+        payload = {"ok": False, "error": {"code": error.code, "message": str(error), **redact(error.details)}}
+        if bootstrap:
+            payload["wiki_skill_bootstrap"] = bootstrap
+        emit(payload, pretty=pretty)
         return error.exit_code
     except OperatorError as error:
         pretty = getattr(locals().get("args", None), "pretty", False)
-        emit_error(error, pretty=pretty)
+        emit_error(error, pretty=pretty, bootstrap=bootstrap)
         return error.exit_code
     except KeyboardInterrupt:
         error = OperatorError("操作已取消", code="interrupted", exit_code=130)
@@ -830,7 +839,7 @@ def emit(value, *, pretty=False, stream=None):
     print(json.dumps(value, ensure_ascii=False, indent=2 if pretty else None, separators=None if pretty else (",", ":")), file=output)
 
 
-def emit_error(error, *, pretty=False):
+def emit_error(error, *, pretty=False, bootstrap=None):
     payload = {
         "ok": False,
         "error": {
@@ -839,4 +848,6 @@ def emit_error(error, *, pretty=False):
             **redact(error.details),
         },
     }
+    if bootstrap:
+        payload["wiki_skill_bootstrap"] = bootstrap
     emit(payload, pretty=pretty, stream=sys.stderr)

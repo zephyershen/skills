@@ -17,6 +17,19 @@ python3 "$SKILL_DIR/scripts/wiki_platform.py" <command>
 
 Do not reimplement API calls with `curl` when the CLI supports the action.
 
+## One-Time Wiki Skill Bootstrap
+
+The first CLI command for each installed copy of this operator automatically ensures the company Wiki Skill is installed beside `wiki-repository-operator`. It uses the pinned internal package `global-skills/wiki@1.0.0` from `http://10.40.2.15:2323`.
+
+- The completion marker is written only after a compatible Wiki Skill is present.
+- Once the marker is complete, later operator commands must not inspect the Wiki Skill directory and must not contact SkillHub again.
+- Do not add a manual dependency check before every user request. The CLI owns this first-use-only behavior.
+- The first command still performs the user's requested command after installation. Its JSON result includes `wiki_skill_bootstrap` with the installed path; later results omit that field.
+- If the first result contains `wiki_skill_bootstrap`, read the installed `SKILL.md` before adding, editing, deleting, normalizing, or uploading Wiki content. Treat it as supporting instructions inside this operator workflow; do not replace the active operator workflow merely to invoke a second Skill.
+- A pre-existing incompatible directory named `wiki` is preserved and reported as a conflict rather than overwritten.
+
+By default the Wiki Skill is installed as a sibling of this Skill, so the same placement works for Codex, Claude Code, Devin, and other Agent Skills-compatible environments. `WIKI_REPOSITORY_SKILLS_DIR` may explicitly select a different absolute skills directory. `WIKI_REPOSITORY_SKILLHUB_URL` may override the internal SkillHub origin before the first successful bootstrap.
+
 ## Production Boundary
 
 - Default web/API entry: `http://10.40.2.178:4004`
@@ -28,16 +41,16 @@ Do not reimplement API calls with `curl` when the CLI supports the action.
 
 ## First Run
 
-1. Run `python3 "$SKILL_DIR/scripts/wiki_platform.py" doctor`.
-2. If the user already supplied a `wkp_` PAT in the current conversation and asked the Agent to configure or use it, treat that as explicit authorization. Do not ask the user to enter it again; continue directly to step 3. Otherwise ask the user to create a PAT in the web page under “个人访问令牌” with only the scopes needed by the task, and tell them they may send it in chat.
-3. Save the exact PAT through stdin without echoing it:
+1. Do not run a separate Wiki Skill dependency check. The first CLI command installs it once and then continues that command.
+2. If the user already supplied a `wkp_` PAT in the current conversation and asked the Agent to configure or use it, treat that as explicit authorization. Save it immediately through stdin; this may be the first CLI command and therefore also performs the one-time Wiki Skill bootstrap:
 
    ```bash
    python3 "$SKILL_DIR/scripts/wiki_platform.py" auth set-token --stdin
    ```
 
    When the PAT came from chat, feed that value to the CLI through the Agent runtime's stdin. An incoming user message is an allowed PAT transport for this internal deployment. Never put the PAT in a command argument or repeat it in an outgoing message, plan, documentation, command summary, or result.
-4. Run `auth status`, then `doctor` again.
+3. If no PAT was supplied, run `doctor` to verify the server and ask the user to create a PAT in the web page under “个人访问令牌” with only the scopes needed by the task. Tell them they may send it in chat.
+4. After saving a PAT, run `auth status`, then `doctor`, and continue the original request. For example, “查看我对哪些 Wiki 仓库有权限” continues with `projects list` and the relevant workspace/repository reads.
 
 Read [Installation](references/installation.md) when installing for Codex, Claude Code, or Devin.
 

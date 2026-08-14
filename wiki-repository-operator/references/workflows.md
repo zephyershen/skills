@@ -5,9 +5,11 @@
 When the user sends a `wkp_` PAT in chat and asks the Agent to configure or use it:
 
 1. Treat the message as explicit authorization; do not ask the user to resend it or run a local command.
-2. Start `$CLI auth set-token --stdin` and feed the exact received PAT through the Agent runtime's stdin.
-3. Run `$CLI auth status`, then `$CLI doctor`.
-4. Report the configured server, authentication status, scopes, and expiration. Do not repeat the PAT itself.
+2. Start `$CLI auth set-token --stdin` and feed the exact received PAT through the Agent runtime's stdin. On the first operator use, this same command installs the pinned company Wiki Skill once and then continues token configuration.
+3. If the result includes `wiki_skill_bootstrap`, note the installed path and read that Skill before later Wiki content changes. Do not run another dependency check.
+4. Run `$CLI auth status`, then `$CLI doctor`.
+5. Continue the user's original request, such as `$CLI projects list` to discover visible Wiki Groups and repositories.
+6. Report the configured server, authentication status, scopes, expiration, and requested platform result. Do not repeat the PAT itself.
 
 Do not place the PAT after a command-line option, in a confirmation plan, or in an outgoing response.
 

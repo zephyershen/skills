@@ -107,10 +107,7 @@ class CredentialStore:
         return normalize_server(DEFAULT_ORIGIN), "default"
 
     def save_endpoint(self, endpoint: Endpoint):
-        self.ensure()
-        settings = self.read_settings()
-        settings["origin"] = endpoint.origin
-        self._atomic_write(self.settings_path, json.dumps(settings, ensure_ascii=False, indent=2) + "\n")
+        self.update_settings({"origin": endpoint.origin})
 
     def reset_endpoint(self):
         self.save_endpoint(normalize_server(DEFAULT_ORIGIN))
@@ -128,6 +125,14 @@ class CredentialStore:
         if not isinstance(value, dict):
             raise OperatorError("平台配置文件格式无效", code="invalid_config")
         return value
+
+    def update_settings(self, values: dict):
+        if not isinstance(values, dict):
+            raise OperatorError("平台配置更新格式无效", code="invalid_config")
+        self.ensure()
+        settings = self.read_settings()
+        settings.update(values)
+        self._atomic_write(self.settings_path, json.dumps(settings, ensure_ascii=False, indent=2) + "\n")
 
     def token(self) -> tuple[str | None, str]:
         environment = os.environ.get(TOKEN_ENV)

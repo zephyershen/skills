@@ -3,6 +3,7 @@
 ## Prerequisites
 
 - Python 3.10 or newer; no third-party package is required.
+- One-time network access from the Agent runtime to the company SkillHub at `http://10.40.2.15:2323`.
 - Network access from the Agent runtime to `http://10.40.2.178:4004`.
 - A Wiki Repository account already added as an enabled Wiki member.
 - A `wkp_` personal access token created by that user in the web page.
@@ -26,9 +27,24 @@ Supported placements:
 - Claude Code personal: `~/.claude/skills/wiki-repository-operator/`
 - Claude Code project: `.claude/skills/wiki-repository-operator/`
 - Devin recommended project location: `.agents/skills/wiki-repository-operator/`
-- Codex local: `~/.codex/skills/wiki-repository-operator/`
+- Codex user location: `~/.agents/skills/wiki-repository-operator/`
 
 For Devin, commit the complete directory into a connected repository. For a shared Claude or Codex installation, symlink the complete directory from a centrally updated checkout.
+
+## Automatic Wiki Skill dependency
+
+The user installs only `global-skills/wiki-repository-operator@1.1.0`. The first CLI command performs this sequence before continuing the requested platform command:
+
+1. Read the private bootstrap completion marker.
+2. When the marker is absent, check the sibling `wiki/` directory once.
+3. If missing, download the exact public package `global-skills/wiki@1.0.0` from the company SkillHub.
+4. Verify SHA-256 `43837e035d6d58e3ea9d44c57d3fa9f077ce940fc3ffdee7a171b536b8e18678`, validate the archive, and install it atomically beside this Skill.
+5. Write the completion marker only after the Wiki Skill is ready.
+6. Continue the original command in the same invocation.
+
+Later normal commands trust the completion marker and do not inspect `wiki/` or contact SkillHub. A failed first installation writes no completion marker, so the next invocation retries. An incompatible pre-existing `wiki/` directory is never overwritten.
+
+The completion marker is kept in `${XDG_CONFIG_HOME:-~/.config}/wiki-repository-operator/settings.json`. `WIKI_REPOSITORY_SKILLS_DIR` can select another absolute destination before first use. `WIKI_REPOSITORY_SKILLHUB_URL` or the compatible `SKILLHUB_API_URL` can replace the company SkillHub root before first use.
 
 ## Create the first token
 
@@ -51,6 +67,8 @@ python3 "$SKILL_DIR/scripts/wiki_platform.py" doctor
 ```
 
 The chat message is an allowed bootstrap transport in this internal deployment. The Agent feeds the received value to `auth set-token --stdin`, does not put it in a command-line argument, and does not repeat it in the result.
+
+If this is the first operator command, `auth set-token --stdin` installs the Wiki Skill first and then continues to save and validate the PAT. The JSON response includes `wiki_skill_bootstrap` only for that first successful bootstrap.
 
 For managed Agent secrets, set `WIKI_REPOSITORY_TOKEN`. The environment value takes precedence over the private token file.
 

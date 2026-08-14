@@ -31,12 +31,14 @@ class ConfigSecurityTests(unittest.TestCase):
     def test_config_and_token_are_private_and_environment_overrides_storage(self):
         with tempfile.TemporaryDirectory() as temporary:
             store = CredentialStore(Path(temporary) / "config")
+            store.update_settings({"wiki_skill_bootstrap": {"status": "complete"}})
             store.save_endpoint(normalize_server("10.40.2.99"))
             store.save_token("wkp_" + "abcdefghijklmnopqrstuvwxyz")
             self.assertEqual(stat.S_IMODE(store.config_dir.stat().st_mode), 0o700)
             self.assertEqual(stat.S_IMODE(store.settings_path.stat().st_mode), 0o600)
             self.assertEqual(stat.S_IMODE(store.token_path.stat().st_mode), 0o600)
             self.assertEqual(store.endpoint()[0].origin, "http://10.40.2.99:4004")
+            self.assertEqual(store.read_settings()["wiki_skill_bootstrap"]["status"], "complete")
             with patch.dict(os.environ, {
                 "WIKI_REPOSITORY_URL": "10.40.2.88",
                 "WIKI_REPOSITORY_TOKEN": "wkp_" + "environmenttoken123456",

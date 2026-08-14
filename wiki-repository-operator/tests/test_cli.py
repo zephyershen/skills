@@ -77,7 +77,12 @@ class CliTests(unittest.TestCase):
     def run_cli(self, arguments, *, stdin=""):
         stdout = io.StringIO()
         stderr = io.StringIO()
-        with patch("sys.stdin", io.StringIO(stdin)), redirect_stdout(stdout), redirect_stderr(stderr):
+        with (
+            patch("sys.stdin", io.StringIO(stdin)),
+            patch("wiki_repository.cli.ensure_wiki_skill_once", return_value=None),
+            redirect_stdout(stdout),
+            redirect_stderr(stderr),
+        ):
             code = main(arguments)
         return code, stdout.getvalue(), stderr.getvalue()
 
