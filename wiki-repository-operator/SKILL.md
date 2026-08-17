@@ -61,6 +61,7 @@ Before calling a write operation, resolve the exact object and intended effect:
 - Distinguish a top-level Wiki Group, a nested Subgroup, a Wiki repository, a personnel group, and a person.
 - Prefer `resolve project`, `resolve repository`, or `resolve person` when the user gives a name instead of an ID.
 - If resolution returns `ambiguous_object`, show the candidates and ask the user to choose. Never guess.
+- When renaming a Wiki Group, read its current state first. Treat `name` as the human-visible label and `path` as the lowercase URL/GitLab path; show both current and target values plus the GitLab path impact before confirmation.
 - For permissions, identify the target person, exact resource, and level (`none`, `read`, or `write`).
 - For “删除”, determine whether the user means recoverable archive or permanent purge. Default to recoverable archive when not explicit.
 - For content changes, generate an upload preview, inspect it, submit a change request, and let an authorized reviewer approve it.

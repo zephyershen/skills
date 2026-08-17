@@ -28,7 +28,7 @@ class SkillContractTests(unittest.TestCase):
         manifest = json.loads((SKILL_DIR / "skill.json").read_text(encoding="utf-8"))
 
         self.assertEqual(manifest["namespace"], "global-skills")
-        self.assertEqual(manifest["version"], "1.1.0")
+        self.assertEqual(manifest["version"], "1.1.2")
         self.assertEqual(manifest["dependencies"][0]["coordinate"], "global-skills/wiki@1.0.0")
         self.assertEqual(manifest["dependencies"][0]["install"], "first-use-once")
         self.assertIn("later operator commands must not inspect the Wiki Skill directory", skill)

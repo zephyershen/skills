@@ -33,7 +33,7 @@ For Devin, commit the complete directory into a connected repository. For a shar
 
 ## Automatic Wiki Skill dependency
 
-The user installs only `global-skills/wiki-repository-operator@1.1.0`. The first CLI command performs this sequence before continuing the requested platform command:
+The user installs only `global-skills/wiki-repository-operator@1.1.2`. The first CLI command performs this sequence before continuing the requested platform command:
 
 1. Read the private bootstrap completion marker.
 2. When the marker is absent, check the sibling `wiki/` directory once.

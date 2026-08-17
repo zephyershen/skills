@@ -99,7 +99,10 @@ class CliTests(unittest.TestCase):
             code, output, error = self.run_cli(["auth", "set-token", "--stdin"], stdin=f"{TEST_PAT}\n")
             self.assertEqual((code, error), (0, ""))
             self.assertNotIn("bootstraptoken123456", output)
-            self.assertTrue(json.loads(output)["result"]["saved"])
+            result = json.loads(output)["result"]
+            self.assertTrue(result["saved"])
+            self.assertTrue(result["token_prefix"].startswith("wkp_"))
+            self.assertNotEqual(result["token_prefix"], TEST_PAT)
             token_path = Path(temporary) / "config" / "token"
             self.assertEqual(token_path.stat().st_mode & 0o777, 0o600)
 
@@ -144,6 +147,18 @@ class CliTests(unittest.TestCase):
             self.assertEqual(code, 2)
             self.assertIn("sensitive_json_rejected", error)
             self.assertNotIn("must-not-pass", error)
+
+    def test_required_mutation_body_is_rejected_before_a_plan_is_created(self):
+        with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {
+            "WIKI_REPOSITORY_CONFIG_DIR": str(Path(temporary) / "config"),
+            "WIKI_REPOSITORY_URL": self.origin,
+            "WIKI_REPOSITORY_TOKEN": TEST_PAT,
+        }, clear=False):
+            code, output, error = self.run_cli(["projects", "update", "--project-id", "7"])
+            self.assertEqual(code, 2)
+            self.assertEqual(output, "")
+            self.assertIn("--json", error)
+            self.assertFalse((Path(temporary) / "config" / "plans").exists())
 
 
 if __name__ == "__main__":

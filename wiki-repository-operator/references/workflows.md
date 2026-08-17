@@ -37,6 +37,25 @@ Do not place the PAT after a command-line option, in a confirmation plan, or in 
 
 If any resolver is ambiguous, stop and ask the user to choose from the returned candidates.
 
+## Rename a Wiki Group
+
+1. Resolve and read the exact Group; never infer its ID from a similar path:
+
+   ```bash
+   $CLI resolve project "global-wiki"
+   $CLI projects get --project-id 7
+   ```
+
+2. Confirm the intended human-visible `name` and lowercase URL/GitLab `path`. For example, `Global Wiki` is the visible name and `global-wiki` is its path. Do not show the path in place of the name.
+3. Generate a high-risk update plan containing only the requested fields:
+
+   ```bash
+   $CLI projects update --project-id 7 --json '{"name":"Global Wiki","path":"global-wiki"}'
+   ```
+
+4. Show the current and target name/path, explain whether the backing GitLab Group path will also change, and execute only after explicit confirmation.
+5. Read `projects get` and `workspace get` again to verify both the display name and path.
+
 ## Upload local Wiki changes
 
 1. Generate a preview plan:

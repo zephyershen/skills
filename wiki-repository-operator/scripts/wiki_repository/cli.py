@@ -22,6 +22,7 @@ from .config import (
     normalize_server,
     validate_token,
 )
+from .contract import audit_openapi
 from .dependencies import ensure_wiki_skill_once
 from .errors import ApiError, ConfirmationRequired, OperatorError
 from .security import SafetyGate, contains_sensitive_fields, is_sensitive_key, redact
@@ -59,7 +60,7 @@ def build_parser():
         add_path_arguments(command, action.path)
         command.add_argument("--param", action="append", default=[], metavar="KEY=VALUE", help="查询参数，可重复")
         if action.method != "GET":
-            add_json_input(command)
+            add_json_input(command, required=action.body_required)
         if action.response_secret:
             command.add_argument("--save-token", required=True, metavar="PATH", help="把新令牌写入权限 600 的新文件")
         if action.risk != "read":
@@ -289,7 +290,7 @@ def handle_action(client, gate, endpoint, args):
     action = args._action_spec
     path = render_path(action.path, args)
     query = parse_query(args.param)
-    body = parse_json_input(args) if action.method != "GET" else None
+    body = parse_json_input(args, required=action.body_required) if action.method != "GET" else None
     required_text = action.confirmation_text
     if required_text:
         format_values = {
@@ -357,7 +358,7 @@ def auth_status(client, token, token_source):
     return {
         "configured": True,
         "source": token_source,
-        "token": masked_token(token),
+        "token_prefix": masked_token(token),
         "profile": profile,
     }
 
@@ -371,11 +372,12 @@ def auth_set_token(client, store):
     token = validate_token(raw)
     profile = client.api("GET", "/auth/me", token_override=token)
     store.save_token(token)
-    return {"saved": True, "token": masked_token(token), "profile": profile}
+    return {"saved": True, "token_prefix": masked_token(token), "profile": profile}
 
 
 def doctor(client, token_source, *, token_error=None):
     checks = {}
+    openapi_specification = None
     for name, operation in (
         ("service", lambda: client.public("/service/meta")),
         ("health", lambda: client.public("/health", base="api")),
@@ -385,8 +387,19 @@ def doctor(client, token_source, *, token_error=None):
             value = operation()
             validate_discovery_component(name, value)
             checks[name] = {"ok": True, "result": summarize_discovery(name, value)}
+            if name == "openapi":
+                openapi_specification = value
         except OperatorError as error:
             checks[name] = {"ok": False, "error": error.code, "message": str(error)}
+    if openapi_specification is not None:
+        contract = audit_openapi(openapi_specification)
+        checks["operator_contract"] = {"ok": contract["compatible"], "result": contract}
+    else:
+        checks["operator_contract"] = {
+            "ok": False,
+            "error": "openapi_unavailable",
+            "message": "无法核对 Operator 命令与平台 API 契约",
+        }
     try:
         if token_error:
             checks["authentication"] = {
@@ -403,7 +416,7 @@ def doctor(client, token_source, *, token_error=None):
     except OperatorError as error:
         checks["authentication"] = {"ok": False, "error": error.code, "message": str(error)}
     return {
-        "ready": all(checks[name]["ok"] for name in ("service", "health", "openapi", "authentication")),
+        "ready": all(checks[name]["ok"] for name in ("service", "health", "openapi", "operator_contract", "authentication")),
         "server": client.endpoint.origin,
         "checks": checks,
     }

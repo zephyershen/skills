@@ -11,10 +11,11 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
+from . import __version__
 from .errors import ApiError, OperatorError
 from .security import redact
 
-USER_AGENT = "wiki-repository-operator/1.0"
+USER_AGENT = f"wiki-repository-operator/{__version__}"
 MAX_JSON_BYTES = 20 * 1024 * 1024
 MAX_DOWNLOAD_BYTES = 1024 * 1024 * 1024
 

@@ -4,7 +4,7 @@ Production-ready Agent Skill and dependency-free Python CLI for the Wiki Reposit
 
 Default server: `http://10.40.2.178:4004`. The default is intentionally committed for this internal-network deployment; credentials are never committed.
 
-Company distribution coordinate: `global-skills/wiki-repository-operator@1.1.0` on `http://10.40.2.15:2323`.
+Company distribution coordinate: `global-skills/wiki-repository-operator@1.1.2` on `http://10.40.2.15:2323`.
 
 ## What it covers
 
@@ -22,7 +22,7 @@ The CLI uses only Python's standard library. Python 3.10 or newer is required.
 
 ## Install
 
-Download `global-skills/wiki-repository-operator@1.1.0` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
+Download `global-skills/wiki-repository-operator@1.1.2` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
 
 Claude Code personal skills live at `~/.claude/skills/<name>/SKILL.md`, and project skills at `.claude/skills/<name>/SKILL.md`, according to [Claude Code's official Skills documentation](https://code.claude.com/docs/en/skills).
 
@@ -64,6 +64,8 @@ python3 scripts/wiki_platform.py doctor
 ```
 
 The first command installs the Wiki Skill and then continues token configuration. No separate dependency command is required.
+
+`doctor` also compares the bundled commands, required request bodies, scopes, and risk levels with the live OpenAPI contract. It reports ready only when every managed API operation is covered; interactive web-password login is deliberately excluded because Agents use personal access tokens.
 
 Create the first `wkp_` personal access token in the Wiki Repository web page. Paste it into stdin or pipe it from a protected secret manager. The CLI stores it under `${XDG_CONFIG_HOME:-~/.config}/wiki-repository-operator/token` with mode `600`.
 

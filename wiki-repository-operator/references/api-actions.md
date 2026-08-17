@@ -46,7 +46,8 @@ The `tokens create` response never prints the new token. The output file must no
 - `projects directory` (`workspace:manage`)
 - `projects get --project-id ID` (`wiki:read`)
 - `projects create --json '{"name":"PA2","description":"Team Wiki","gitlab":{"mode":"create","path":"pa2"}}'` (`workspace:manage`)
-- `projects update --project-id ID --json '{"description":"Updated"}'` (`workspace:manage`)
+- `projects update --project-id ID --json '{"description":"Updated"}'` (`workspace:manage`, high risk)
+- `projects update --project-id ID --json '{"name":"Global Wiki","path":"global-wiki"}'` (rename the visible name and URL/GitLab path)
 - `workspace get --project-id ID --param reconcile=false` (`wiki:read`)
 - `workspace group-candidates --project-id ID --param parent_id=NS_ID --param search=platform`
 - `workspace wiki-candidates --project-id ID --param namespace_id=NS_ID`
@@ -60,6 +61,8 @@ Binding existing objects uses opaque references returned by candidate endpoints:
 - top-level Group: `{"gitlab":{"mode":"bind","group_reference":"full/path"}}`
 - Subgroup: `{"mode":"bind","parent_id":NS_ID,"group_reference":"full/path"}`
 - Wiki: `{"mode":"bind","namespace_id":NS_ID,"repository_reference":"full/path"}`
+
+Before renaming a Wiki Group, read it with `projects get`. `name` is the human-visible label and `path` is the lowercase URL/GitLab path; do not display the path as the name. Show the current and target values for both fields and whether the backing GitLab Group path will change before asking for confirmation.
 
 ## Wiki content and changes
 
