@@ -10,6 +10,18 @@
 
 The web login password is not an Agent credential and must not be placed in this Skill.
 
+## Download from the company SkillHub
+
+The SkillHub CLI defaults to localhost. Point it at the company server for both health checks and installation:
+
+```bash
+SKILLHUB_API_URL=http://10.40.2.15:2323 skillhub doctor --json
+SKILLHUB_API_URL=http://10.40.2.15:2323 \
+  skillhub install global-skills/wiki-repository-operator@1.1.3 --dir /path/to/downloads
+```
+
+The installed directory is `/path/to/downloads/global-skills/wiki-repository-operator/`. Move or symlink that complete directory to one of the Agent locations below; do not move only `SKILL.md`.
+
 ## Install the complete bundle
 
 Keep the directory structure intact:
@@ -33,7 +45,7 @@ For Devin, commit the complete directory into a connected repository. For a shar
 
 ## Automatic Wiki Skill dependency
 
-The user installs only `global-skills/wiki-repository-operator@1.1.2`. The first CLI command performs this sequence before continuing the requested platform command:
+The user installs only `global-skills/wiki-repository-operator@1.1.3`. The first CLI command performs this sequence before continuing the requested platform command:
 
 1. Read the private bootstrap completion marker.
 2. When the marker is absent, check the sibling `wiki/` directory once.

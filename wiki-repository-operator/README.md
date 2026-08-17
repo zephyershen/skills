@@ -4,7 +4,7 @@ Production-ready Agent Skill and dependency-free Python CLI for the Wiki Reposit
 
 Default server: `http://10.40.2.178:4004`. The default is intentionally committed for this internal-network deployment; credentials are never committed.
 
-Company distribution coordinate: `global-skills/wiki-repository-operator@1.1.2` on `http://10.40.2.15:2323`.
+Company distribution coordinate: `global-skills/wiki-repository-operator@1.1.3` on `http://10.40.2.15:2323`.
 
 ## What it covers
 
@@ -22,7 +22,16 @@ The CLI uses only Python's standard library. Python 3.10 or newer is required.
 
 ## Install
 
-Download `global-skills/wiki-repository-operator@1.1.2` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
+Download `global-skills/wiki-repository-operator@1.1.3` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
+
+The company SkillHub CLI defaults to localhost, so set its server explicitly:
+
+```bash
+SKILLHUB_API_URL=http://10.40.2.15:2323 \
+  skillhub install global-skills/wiki-repository-operator@1.1.3 --dir /path/to/downloads
+```
+
+The downloaded Skill is under `/path/to/downloads/global-skills/wiki-repository-operator/`. Copy or symlink that complete directory into the Agent-specific location below.
 
 Claude Code personal skills live at `~/.claude/skills/<name>/SKILL.md`, and project skills at `.claude/skills/<name>/SKILL.md`, according to [Claude Code's official Skills documentation](https://code.claude.com/docs/en/skills).
 
