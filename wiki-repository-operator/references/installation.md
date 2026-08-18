@@ -17,7 +17,7 @@ The SkillHub CLI defaults to localhost. Point it at the company server for both 
 ```bash
 SKILLHUB_API_URL=http://10.40.2.15:2323 skillhub doctor --json
 SKILLHUB_API_URL=http://10.40.2.15:2323 \
-  skillhub install global-skills/wiki-repository-operator@1.1.4 --dir /path/to/downloads
+  skillhub install global-skills/wiki-repository-operator@1.2.0 --dir /path/to/downloads
 ```
 
 The installed directory is `/path/to/downloads/global-skills/wiki-repository-operator/`. Move or symlink that complete directory to one of the Agent locations below; do not move only `SKILL.md`.
@@ -45,7 +45,7 @@ For Devin, commit the complete directory into a connected repository. For a shar
 
 ## Automatic Wiki Skill dependency
 
-The user installs only the currently published `global-skills/wiki-repository-operator@1.1.4`. The first CLI command performs this sequence before continuing the requested platform command:
+The user installs only the currently published `global-skills/wiki-repository-operator@1.2.0`. The first CLI command performs this sequence before continuing the requested platform command:
 
 1. Read the private bootstrap completion marker.
 2. When the marker is absent, check the sibling `wiki/` directory once.

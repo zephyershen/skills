@@ -1,7 +1,7 @@
 {
   "namespace": "global-skills",
   "name": "wiki-repository-operator",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Operate the internal Wiki Repository platform and install the pinned company Wiki Skill automatically on first use.",
   "entrypoint": "scripts/wiki_platform.py",
   "python": ">=3.10",

@@ -27,6 +27,8 @@ ACTIONS = (
     Action("projects", "get", "GET", "/projects/{projectId}", "wiki:read", "read", "读取 Wiki Group"),
     Action("projects", "create", "POST", "/projects", "workspace:manage", "high", "创建或接入 Wiki Group", body_required=True),
     Action("projects", "update", "PUT", "/projects/{projectId}", "workspace:manage", "high", "修改 Wiki Group", body_required=True),
+    Action("projects", "system-root-preview", "POST", "/projects/system-root/migrations/preview", "workspace:manage", "medium", "预览隐藏系统根与 Group 重挂载", body_required=True),
+    Action("projects", "system-root-apply", "POST", "/projects/system-root/migrations/{previewId}/apply", "workspace:manage", "critical", "执行已预览的隐藏系统根迁移", confirmation_text="APPLY SYSTEM ROOT MIGRATION {previewId}"),
 
     Action("workspace", "get", "GET", "/projects/{projectId}/workspace", "wiki:read", "read", "读取 Group 工作区"),
     Action("workspace", "group-candidates", "GET", "/projects/{projectId}/namespace-candidates", "workspace:manage", "read", "列出 Subgroup 候选"),
@@ -80,11 +82,11 @@ ACTIONS = (
     Action("archives", "purge", "DELETE", "/archives/{kind}/{id}", "archives:manage", "critical", "永久清理归档资源", body_required=True, confirmation_text="PERMANENTLY DELETE {kind} {id}"),
 
     Action("gitlab", "status", "GET", "/integrations/gitlab/status", "integrations:manage", "read", "检查 GitLab 连接"),
-    Action("gitlab", "namespaces", "GET", "/integrations/gitlab/namespaces", "integrations:manage", "read", "搜索 GitLab 顶级 Group"),
+    Action("gitlab", "namespaces", "GET", "/integrations/gitlab/namespaces", "integrations:manage", "read", "搜索默认存储目录下的 GitLab Group"),
 
     Action("jira", "status", "GET", "/integrations/jira/status", "integrations:manage", "read", "读取 Jira 绑定状态"),
     Action("jira", "projects", "GET", "/integrations/jira/projects", "integrations:manage", "read", "列出 Jira 项目"),
-    Action("jira", "parents", "GET", "/integrations/jira/parents", "integrations:manage", "read", "列出 Jira 导入位置"),
+    Action("jira", "parents", "GET", "/integrations/jira/parents", "integrations:manage", "read", "兼容读取固定 Jira 导入位置"),
     Action("jira", "import-preview", "POST", "/integrations/jira/imports/preview", "integrations:manage", "medium", "预览 Jira 导入", body_required=True),
     Action("jira", "import", "POST", "/integrations/jira/imports", "integrations:manage", "high", "执行 Jira 导入", body_required=True),
 )

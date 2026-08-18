@@ -30,6 +30,9 @@ from .security import SafetyGate, contains_sensitive_fields, is_sensitive_key, r
 MAX_INPUT_BYTES = 2 * 1024 * 1024
 _PLACEHOLDER = re.compile(r"\{([A-Za-z][A-Za-z0-9]*)\}")
 _ENVIRONMENT_NAME = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+_UUID = re.compile(
+    r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+)
 
 
 class SafeArgumentParser(argparse.ArgumentParser):
@@ -186,6 +189,8 @@ def add_path_arguments(parser, path):
         option = f"--{camel_to_kebab(name)}"
         if name == "kind":
             parser.add_argument(option, required=True, choices=["project", "namespace", "repository"])
+        elif name == "previewId":
+            parser.add_argument(option, required=True, type=uuid_value)
         elif name == "changeRequestId" or name == "tokenId":
             parser.add_argument(option, required=True)
         else:
@@ -865,6 +870,13 @@ def positive_id(value):
     if result <= 0:
         raise argparse.ArgumentTypeError("必须是正整数")
     return result
+
+
+def uuid_value(value):
+    result = str(value or "").strip()
+    if not _UUID.fullmatch(result):
+        raise argparse.ArgumentTypeError("必须是 UUID")
+    return result.lower()
 
 
 def camel_to_snake(value):

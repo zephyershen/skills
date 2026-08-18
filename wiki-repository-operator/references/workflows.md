@@ -37,24 +37,46 @@ Do not place the PAT after a command-line option, in a confirmation plan, or in 
 
 If any resolver is ambiguous, stop and ask the user to choose from the returned candidates.
 
-## Rename a Wiki Group
+## Rename a visible Wiki Group
 
 1. Resolve and read the exact Group; never infer its ID from a similar path:
 
    ```bash
-   $CLI resolve project "global-wiki"
-   $CLI projects get --project-id 7
+   $CLI resolve project "PA2"
+   $CLI projects get --project-id PROJECT_ID
    ```
 
-2. Confirm the intended human-visible `name` and lowercase URL/GitLab `path`. For example, `Global Wiki` is the visible name and `global-wiki` is its path. Do not show the path in place of the name.
+2. Confirm the intended human-visible `name` and lowercase URL/GitLab `path`. Do not show the path in place of the name. The hidden system root is not a valid target for this workflow.
 3. Generate a high-risk update plan containing only the requested fields:
 
    ```bash
-   $CLI projects update --project-id 7 --json '{"name":"Global Wiki","path":"global-wiki"}'
+   $CLI projects update --project-id PROJECT_ID --json '{"name":"PA2 Knowledge","gitlab":{"path":"pa2-knowledge"}}'
    ```
 
 4. Show the current and target name/path, explain whether the backing GitLab Group path will also change, and execute only after explicit confirmation.
 5. Read `projects get` and `workspace get` again to verify both the display name and path.
+
+## Configure the hidden default root and rehome Groups
+
+This is an administrator-only production migration. The hidden root is a storage container and must never be operated through ordinary project update, permission, or archive commands.
+
+1. Resolve the visible Groups that will move and record their project IDs. Obtain the system-root candidate ID from the approved platform migration request; it will not be available in ordinary project discovery after migration.
+2. Generate the read-only migration preview:
+
+   ```bash
+   $CLI projects system-root-preview --json '{"system_root_project_id":7,"project_ids":[8,9]}'
+   ```
+
+3. Show the returned preview ID, expiration, root identity, every `old_full_path` and `new_full_path`, `group_count`, `repository_count`, and `platform_repository_count`. Continue only when the whole preview and every project report `can_apply: true`. A positive `repository_count` means untracked GitLab projects will move with their Group while preserving each GitLab project ID and full commit history. A positive `platform_repository_count`, an archived/pending-delete repository, or any other preview error blocks the apply.
+   On an empty platform, `project_ids` may be an empty array; the same preview/apply flow then configures only the hidden root.
+4. Generate a separate critical apply plan without changing the preview ID:
+
+   ```bash
+   $CLI projects system-root-apply --preview-id PREVIEW_UUID
+   ```
+
+5. After explicit confirmation, execute that exact plan with its plan ID and exact critical phrase. The API clones the Group trees below the hidden root, transfers accepted GitLab repositories without changing their project IDs, preserves platform IDs/permissions/Jira references, and gives the old top-level roots a timestamped final `deleted` suffix. It never permanently deletes the old GitLab trees or recreates repository contents.
+6. Verify with `projects directory`, `projects list`, and each moved `workspace get`: the hidden root is absent, logical Groups remain visible, their platform IDs are unchanged, physical paths are below the default root, and every returned `repository_mapping` has `project_id_preserved: true`. If the result is ambiguous or reports recovery required, stop and inspect through the public API; do not retry with a new preview blindly.
 
 ## Upload local Wiki changes
 
@@ -162,7 +184,7 @@ $CLI jira apply --secret-env JIRA_PAT
 
 Review Jira URL, account, and project count. The apply step is critical and requires `APPLY JIRA TOKEN`. Verify with `jira status` and `jira projects`.
 
-For Jira imports, call `jira parents` and `jira projects`, build exact selections, run `jira import-preview`, show every source project and target path, then plan `jira import` with `"confirmed": true`. Verify created Groups in the project workspace.
+For Jira imports, call `jira projects`, build selections containing only `jira_project_id`, run `jira import-preview`, show every source project and the automatically selected target path, then plan `jira import` with `"confirmed": true`. Do not call `jira parents` or send `parent_namespace_id`. Verify each created logical Group in its project workspace.
 
 ## Change the platform IP
 

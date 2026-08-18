@@ -60,6 +60,7 @@ Read [Installation](references/installation.md) when installing for Codex, Claud
 Before calling a write operation, resolve the exact object and intended effect:
 
 - Distinguish a top-level Wiki Group, a nested Subgroup, a Wiki repository, a personnel group, and a person.
+- The platform's hidden system root is storage infrastructure, not a user-visible Wiki Group. Normal discovery, access, rename, archive, and permission workflows must never target it. New logical Wiki Groups and Jira imports automatically become its direct children; callers do not choose that parent.
 - Prefer `resolve project`, `resolve repository`, or `resolve person` when the user gives a name instead of an ID.
 - If resolution returns `ambiguous_object`, show the candidates and ask the user to choose. Never guess.
 - When renaming a Wiki Group, read its current state first. Treat `name` as the human-visible label and `path` as the lowercase URL/GitLab path; show both current and target values plus the GitLab path impact before confirmation.
@@ -81,6 +82,8 @@ Read-only commands execute immediately. Every production mutation uses a two-ste
 Never invent a plan ID, skip the first step, reuse a plan, alter parameters after confirmation, or treat a failed mutation as safe to retry. Plans expire after 10 minutes and contain no credential values.
 
 Archive and restore plans automatically read the current resource and bind `expected_full_path` into the plan. The confirmation attempt reads it again; a renamed, replaced, missing, or newly invisible target stops before mutation and requires a new plan.
+
+Configuring the hidden system root is a dedicated administrator migration. Run `projects system-root-preview`, show every old/new path, Group count, GitLab and platform repository counts, and `can_apply` result, then generate the separate critical `projects system-root-apply` plan. Untracked GitLab repositories may move only when the preview accepts them; the migration preserves their GitLab project IDs and history. A nonzero `platform_repository_count` blocks migration. Never substitute ordinary project update/archive commands for this workflow.
 
 After a successful mutation, use a read command to verify the resulting state and report both the change and verification.
 

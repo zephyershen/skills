@@ -185,6 +185,23 @@ class CliTests(unittest.TestCase):
             self.assertIn("--json", error)
             self.assertFalse((Path(temporary) / "config" / "plans").exists())
 
+    def test_system_root_apply_accepts_a_uuid_preview_id(self):
+        with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {
+            "WIKI_REPOSITORY_CONFIG_DIR": str(Path(temporary) / "config"),
+            "WIKI_REPOSITORY_URL": self.origin,
+            "WIKI_REPOSITORY_TOKEN": TEST_PAT,
+        }, clear=False):
+            preview_id = "4493b666-3b55-4756-931c-50231114fec6"
+            code, output, error = self.run_cli([
+                "projects", "system-root-apply", "--preview-id", preview_id,
+            ])
+            self.assertEqual((code, error), (3, ""))
+            plan = json.loads(output)["error"]["plan"]
+            self.assertEqual(
+                plan["request"]["path"],
+                f"/projects/system-root/migrations/{preview_id}/apply",
+            )
+
     def test_archive_plan_binds_the_live_path_and_rejects_a_changed_target(self):
         with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {
             "WIKI_REPOSITORY_CONFIG_DIR": str(Path(temporary) / "config"),
