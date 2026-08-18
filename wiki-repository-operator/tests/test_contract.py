@@ -44,10 +44,10 @@ class ContractTests(unittest.TestCase):
     def test_current_operator_contract_is_complete(self):
         result = audit_openapi(complete_openapi())
         self.assertTrue(result["compatible"])
-        self.assertEqual(result["api_operation_count"], 74)
-        self.assertEqual(result["managed_api_operation_count"], 73)
-        self.assertEqual(result["covered_api_operation_count"], 73)
-        self.assertEqual(result["operator_command_count"], 73)
+        self.assertEqual(result["api_operation_count"], 76)
+        self.assertEqual(result["managed_api_operation_count"], 75)
+        self.assertEqual(result["covered_api_operation_count"], 75)
+        self.assertEqual(result["operator_command_count"], 75)
         self.assertEqual(result["unsupported_operations"], [])
         self.assertEqual(result["unavailable_commands"], [])
         self.assertEqual(result["metadata_mismatches"], [])
@@ -73,6 +73,8 @@ class ContractTests(unittest.TestCase):
         self.assertTrue(ACTION_BY_KEY[("projects", "update")].body_required)
         self.assertEqual(ACTION_BY_KEY[("projects", "system-root-preview")].risk, "medium")
         self.assertEqual(ACTION_BY_KEY[("projects", "system-root-apply")].risk, "critical")
+        self.assertEqual(ACTION_BY_KEY[("projects", "system-root-revert-preview")].risk, "read")
+        self.assertEqual(ACTION_BY_KEY[("projects", "system-root-revert")].risk, "critical")
 
 
 if __name__ == "__main__":

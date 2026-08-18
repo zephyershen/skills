@@ -49,6 +49,8 @@ The `tokens create` response never prints the new token. The output file must no
 - `projects update --project-id ID --json '{"description":"Updated"}'` (`workspace:manage`, high risk)
 - `projects system-root-preview --json '{"system_root_project_id":7,"project_ids":[8,9]}'` (administrator-only migration preview)
 - `projects system-root-apply --preview-id UUID` (critical; exact phrase comes from the plan)
+- `projects system-root-revert-preview --preview-id UUID --project-id ID` (read-only exact corrective preview)
+- `projects system-root-revert --preview-id UUID --project-id ID` (critical; restores only the recorded original Group and repositories)
 - `workspace get --project-id ID --param reconcile=false` (`wiki:read`)
 - `workspace group-candidates --project-id ID --param parent_id=NS_ID --param search=platform`
 - `workspace wiki-candidates --project-id ID --param namespace_id=NS_ID`
@@ -68,6 +70,8 @@ Binding existing objects uses opaque references returned by candidate endpoints:
 Before renaming a Wiki Group, read it with `projects get`. `name` is the human-visible label and `path` is the lowercase URL/GitLab path; do not display the path as the name. Show the current and target values for both fields and whether the backing GitLab Group path will change before asking for confirmation.
 
 The hidden system root never appears in ordinary project discovery and cannot be read, renamed, archived, or granted to a person through normal commands. New logical Wiki Groups are always created directly below it; the request body has no parent selector. Configure or migrate it only through the dedicated preview/apply commands above. The preview must report `can_apply: true` for every project. `repository_count` is the number of untracked GitLab projects that will transfer with their original project IDs and history; `platform_repository_count` must be zero.
+
+The corrective revert commands require the exact completed migration UUID and one project ID. The read-only preview fixes the old top-level Group ID/path, the migrated clone ID/path, and every GitLab repository ID/restored path. The critical plan embeds that preview and re-reads it before applying. A successful revert restores the original top-level Group and repository IDs, gives only the migrated clone a timestamped `deleted` suffix, and archives the mistaken platform project so its name can be created again. It never scans or changes other top-level Groups.
 
 ## Wiki content and changes
 

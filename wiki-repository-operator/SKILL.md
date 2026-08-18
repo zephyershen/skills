@@ -85,6 +85,8 @@ Archive and restore plans automatically read the current resource and bind `expe
 
 Configuring the hidden system root is a dedicated administrator migration. Run `projects system-root-preview`, show every old/new path, Group count, GitLab and platform repository counts, and `can_apply` result, then generate the separate critical `projects system-root-apply` plan. Untracked GitLab repositories may move only when the preview accepts them; the migration preserves their GitLab project IDs and history. A nonzero `platform_repository_count` blocks migration. Never substitute ordinary project update/archive commands for this workflow.
 
+Correcting one project that was mistakenly included in a completed system-root migration is a separate administrator-only workflow. Run `projects system-root-revert-preview` with the exact migration UUID and project ID, show the old top-level Group ID/path, migrated clone ID/path, every repository ID/restored path, and the guarantee that other top-level Groups are untouched. Only when `can_revert` is true may you generate the critical `projects system-root-revert` plan. The CLI binds that complete live preview into the one-time plan and reads it again before execution. Never use this command to reorganize unrelated Groups or to reverse the whole migration.
+
 After a successful mutation, use a read command to verify the resulting state and report both the change and verification.
 
 ## Secret Handling

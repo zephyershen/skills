@@ -21,6 +21,7 @@ CREATED_PAT = "wkp_" + "created" + "childtoken123456789"
 class PlatformHandler(BaseHTTPRequestHandler):
     create_calls = 0
     archive_calls = 0
+    revert_calls = 0
     workspace_full_path = "pa2-2/t-mobile/teton"
 
     def do_GET(self):
@@ -45,6 +46,25 @@ class PlatformHandler(BaseHTTPRequestHandler):
                 "id": 18,
                 "full_path": type(self).workspace_full_path,
             }]})
+        if self.path == "/api/projects/system-root/migrations/4493b666-3b55-4756-931c-50231114fec6/projects/9/revert-preview":
+            return self.respond(200, {
+                "can_revert": True,
+                "migration_id": "4493b666-3b55-4756-931c-50231114fec6",
+                "project_id": 9,
+                "restore_top_level_group": {
+                    "gitlab_group_id": 169,
+                    "restored_full_path": "pa2-1",
+                },
+                "remove_migrated_clone": {
+                    "gitlab_group_id": 268,
+                    "full_path": "global-wiki/pa2-1",
+                },
+                "repositories": [{
+                    "gitlab_project_id": 215,
+                    "restored_full_path": "pa2-1/py3acs",
+                }],
+                "scope_guarantee": "不修改其他顶级 Group",
+            })
         return self.respond(404, {"error": "missing"})
 
     def do_POST(self):
@@ -62,6 +82,9 @@ class PlatformHandler(BaseHTTPRequestHandler):
             length = int(self.headers.get("Content-Length", 0))
             body = json.loads(self.rfile.read(length))
             return self.respond(200, {"ok": True, "received": body})
+        if self.path == "/api/projects/system-root/migrations/4493b666-3b55-4756-931c-50231114fec6/projects/9/revert":
+            type(self).revert_calls += 1
+            return self.respond(200, {"ok": True, "project_id": 9})
         return self.respond(404, {"error": "missing"})
 
     def do_DELETE(self):
@@ -201,6 +224,38 @@ class CliTests(unittest.TestCase):
                 plan["request"]["path"],
                 f"/projects/system-root/migrations/{preview_id}/apply",
             )
+
+    def test_system_root_revert_plan_binds_the_exact_read_only_preview(self):
+        with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {
+            "WIKI_REPOSITORY_CONFIG_DIR": str(Path(temporary) / "config"),
+            "WIKI_REPOSITORY_URL": self.origin,
+            "WIKI_REPOSITORY_TOKEN": TEST_PAT,
+        }, clear=False):
+            PlatformHandler.revert_calls = 0
+            preview_id = "4493b666-3b55-4756-931c-50231114fec6"
+            arguments = [
+                "projects", "system-root-revert",
+                "--preview-id", preview_id,
+                "--project-id", "9",
+            ]
+            code, output, error = self.run_cli(arguments)
+            self.assertEqual((code, error), (3, ""))
+            plan = json.loads(output)["error"]["plan"]
+            self.assertEqual(plan["request"]["body"]["verified_revert_preview"]["project_id"], 9)
+            self.assertEqual(
+                plan["confirmation_text"],
+                f"REVERT SYSTEM ROOT MIGRATION {preview_id} PROJECT 9",
+            )
+            self.assertEqual(PlatformHandler.revert_calls, 0)
+
+            code, output, error = self.run_cli([
+                *arguments,
+                "--confirm", plan["id"],
+                "--confirm-text", plan["confirmation_text"],
+            ])
+            self.assertEqual((code, error), (0, ""))
+            self.assertEqual(json.loads(output)["result"]["project_id"], 9)
+            self.assertEqual(PlatformHandler.revert_calls, 1)
 
     def test_archive_plan_binds_the_live_path_and_rejects_a_changed_target(self):
         with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {

@@ -78,6 +78,27 @@ This is an administrator-only production migration. The hidden root is a storage
 5. After explicit confirmation, execute that exact plan with its plan ID and exact critical phrase. The API clones the Group trees below the hidden root, transfers accepted GitLab repositories without changing their project IDs, preserves platform IDs/permissions/Jira references, and gives the old top-level roots a timestamped final `deleted` suffix. It never permanently deletes the old GitLab trees or recreates repository contents.
 6. Verify with `projects directory`, `projects list`, and each moved `workspace get`: the hidden root is absent, logical Groups remain visible, their platform IDs are unchanged, physical paths are below the default root, and every returned `repository_mapping` has `project_id_preserved: true`. If the result is ambiguous or reports recovery required, stop and inspect through the public API; do not retry with a new preview blindly.
 
+## Correct one project mistakenly included in a root migration
+
+This is not a general move command. Use it only when one exact project in a completed system-root migration must return to its recorded original top-level GitLab Group while the hidden root and every other migrated or top-level Group stay unchanged.
+
+1. Run the read-only exact preview with the completed migration UUID and mistaken platform project ID:
+
+   ```bash
+   $CLI projects system-root-revert-preview --preview-id MIGRATION_UUID --project-id PROJECT_ID
+   ```
+
+2. Continue only when `can_revert` is true. Show `restore_top_level_group.gitlab_group_id` and `restored_full_path`, the migrated clone ID/path, every repository `gitlab_project_id` and `restored_full_path`, the platform archive effect, and `scope_guarantee`.
+3. Generate the critical one-time plan with exactly the same UUID and project ID:
+
+   ```bash
+   $CLI projects system-root-revert --preview-id MIGRATION_UUID --project-id PROJECT_ID
+   ```
+
+   The CLI reads the preview again, embeds it in the plan, and repeats the same read before execution. Any changed Group, repository, path, binding, or extra repository blocks the command.
+4. After the user explicitly confirms the displayed plan and exact phrase, execute that same plan. Do not change either ID and do not substitute an ordinary archive/restore command.
+5. Verify via `projects directory` and `projects list` that the mistaken platform project is absent, while intended migrated projects remain. The result must report the original top-level Group and every repository ID at their old paths, the migrated clone with a `deleted` suffix, and the unchanged hidden system root. The command never discovers or modifies unrelated top-level Groups.
+
 ## Upload local Wiki changes
 
 1. Generate a preview plan:

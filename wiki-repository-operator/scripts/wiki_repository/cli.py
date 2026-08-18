@@ -305,6 +305,20 @@ def handle_action(client, gate, endpoint, args):
         }
         required_text = required_text.format(**format_values)
     gate_body = body
+    if f"{action.group}.{action.name}" == "projects.system-root-revert":
+        preview = client.api(
+            "GET",
+            f"/projects/system-root/migrations/{args.preview_id}/projects/{args.project_id}/revert-preview",
+            retry=True,
+        )
+        if not isinstance(preview, dict) or preview.get("can_revert") is not True:
+            raise OperatorError(
+                "单项目回退预检未通过，不能生成执行计划",
+                code="system_root_revert_preview_blocked",
+                exit_code=6,
+                details={"preview": redact(preview)},
+            )
+        gate_body = {"verified_revert_preview": preview}
     if action.response_secret:
         gate_body = {
             "request": body,

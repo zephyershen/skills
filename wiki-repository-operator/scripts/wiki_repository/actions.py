@@ -29,6 +29,8 @@ ACTIONS = (
     Action("projects", "update", "PUT", "/projects/{projectId}", "workspace:manage", "high", "修改 Wiki Group", body_required=True),
     Action("projects", "system-root-preview", "POST", "/projects/system-root/migrations/preview", "workspace:manage", "medium", "预览隐藏系统根与 Group 重挂载", body_required=True),
     Action("projects", "system-root-apply", "POST", "/projects/system-root/migrations/{previewId}/apply", "workspace:manage", "critical", "执行已预览的隐藏系统根迁移", confirmation_text="APPLY SYSTEM ROOT MIGRATION {previewId}"),
+    Action("projects", "system-root-revert-preview", "GET", "/projects/system-root/migrations/{previewId}/projects/{projectId}/revert-preview", "workspace:manage", "read", "预览单个误迁移 Group 的安全回退"),
+    Action("projects", "system-root-revert", "POST", "/projects/system-root/migrations/{previewId}/projects/{projectId}/revert", "workspace:manage", "critical", "回退单个误迁移的 Group", confirmation_text="REVERT SYSTEM ROOT MIGRATION {previewId} PROJECT {projectId}"),
 
     Action("workspace", "get", "GET", "/projects/{projectId}/workspace", "wiki:read", "read", "读取 Group 工作区"),
     Action("workspace", "group-candidates", "GET", "/projects/{projectId}/namespace-candidates", "workspace:manage", "read", "列出 Subgroup 候选"),
