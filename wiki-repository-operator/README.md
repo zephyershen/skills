@@ -4,7 +4,7 @@ Production-ready Agent Skill and dependency-free Python CLI for the Wiki Reposit
 
 Default server: `http://10.40.2.178:4004`. The default is intentionally committed for this internal-network deployment; credentials are never committed.
 
-This checkout is version `1.1.4`. The company SkillHub at `http://10.40.2.15:2323` currently publishes `global-skills/wiki-repository-operator@1.1.3`; publish `1.1.4` before advertising or installing that coordinate.
+This checkout is version `1.1.4`. The company SkillHub at `http://10.40.2.15:2323` publishes `global-skills/wiki-repository-operator@1.1.4`.
 
 ## What it covers
 
@@ -22,13 +22,13 @@ The CLI uses only Python's standard library. Python 3.10 or newer is required.
 
 ## Install
 
-Download the currently published `global-skills/wiki-repository-operator@1.1.3` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
+Download the currently published `global-skills/wiki-repository-operator@1.1.4` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
 
 The company SkillHub CLI defaults to localhost, so set its server explicitly:
 
 ```bash
 SKILLHUB_API_URL=http://10.40.2.15:2323 \
-  skillhub install global-skills/wiki-repository-operator@1.1.3 --dir /path/to/downloads
+  skillhub install global-skills/wiki-repository-operator@1.1.4 --dir /path/to/downloads
 ```
 
 The downloaded Skill is under `/path/to/downloads/global-skills/wiki-repository-operator/`. Copy or symlink that complete directory into the Agent-specific location below.

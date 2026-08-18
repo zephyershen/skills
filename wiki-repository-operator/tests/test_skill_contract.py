@@ -44,14 +44,15 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("original path has already been reused", workflows)
         self.assertIn("expected_full_path", workflows)
 
-    def test_installation_does_not_advertise_an_unpublished_version(self):
+    def test_installation_advertises_the_published_version(self):
         readme = (SKILL_DIR / "README.md").read_text(encoding="utf-8")
         installation = (SKILL_DIR / "references" / "installation.md").read_text(encoding="utf-8")
 
-        self.assertIn("currently publishes `global-skills/wiki-repository-operator@1.1.3`", readme)
-        self.assertIn("skillhub install global-skills/wiki-repository-operator@1.1.3", installation)
-        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.1.4", readme)
-        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.1.4", installation)
+        self.assertIn("publishes `global-skills/wiki-repository-operator@1.1.4`", readme)
+        self.assertIn("skillhub install global-skills/wiki-repository-operator@1.1.4", readme)
+        self.assertIn("skillhub install global-skills/wiki-repository-operator@1.1.4", installation)
+        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.1.3", readme)
+        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.1.3", installation)
 
 
 if __name__ == "__main__":
