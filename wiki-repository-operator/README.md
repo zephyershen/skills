@@ -4,7 +4,7 @@ Production-ready Agent Skill and dependency-free Python CLI for the Wiki Reposit
 
 Default server: `http://10.40.2.178:4004`. The default is intentionally committed for this internal-network deployment; credentials are never committed.
 
-Company distribution coordinate: `global-skills/wiki-repository-operator@1.1.3` on `http://10.40.2.15:2323`.
+This checkout is version `1.1.4`. The company SkillHub at `http://10.40.2.15:2323` currently publishes `global-skills/wiki-repository-operator@1.1.3`; publish `1.1.4` before advertising or installing that coordinate.
 
 ## What it covers
 
@@ -13,7 +13,7 @@ Company distribution coordinate: `global-skills/wiki-repository-operator@1.1.3` 
 - Search, knowledge graph, backlinks, grounded Q&A, and streaming Q&A
 - Directory upload preview, change requests, approval, and rejection
 - Personnel, personnel groups, resource permissions, and platform admins
-- Archives, restore, and separately confirmed permanent purge
+- Recoverable archive that releases GitLab names/paths with timestamped `deleted` suffixes, restore, and separately confirmed permanent purge
 - Fine-grained personal access tokens
 - GitLab and Jira validate-before-apply configuration flows
 - Jira project import preview and execution
@@ -22,7 +22,7 @@ The CLI uses only Python's standard library. Python 3.10 or newer is required.
 
 ## Install
 
-Download `global-skills/wiki-repository-operator@1.1.3` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
+Download the currently published `global-skills/wiki-repository-operator@1.1.3` once from the company SkillHub, then place the complete `wiki-repository-operator` directory in a Skill location recognized by the Agent. Do not copy only `SKILL.md`; the scripts and references are part of the Skill.
 
 The company SkillHub CLI defaults to localhost, so set its server explicitly:
 
@@ -58,7 +58,7 @@ The bundle follows the open Agent Skills `SKILL.md` structure described in [Open
 
 Users install only `wiki-repository-operator`. On its first CLI command, the operator checks once for a compatible sibling `wiki` Skill. If missing, it downloads the pinned company package `global-skills/wiki@1.0.0` from `http://10.40.2.15:2323`, verifies its SHA-256, installs it atomically, records successful completion, and then continues the original command.
 
-After successful completion, normal operator commands read only the saved completion marker. They do not inspect the Wiki Skill directory and do not contact SkillHub again. A different installed copy of the operator receives its own first-use bootstrap marker.
+After successful completion, normal operator commands read only the saved completion marker, including the install path resolved on the first run. Later commands do not switch directories when the environment override is absent, inspect the Wiki Skill directory, or contact SkillHub again. A different installed copy of the operator receives its own first-use bootstrap marker.
 
 The private marker is stored in `${XDG_CONFIG_HOME:-~/.config}/wiki-repository-operator/settings.json`. Set `WIKI_REPOSITORY_SKILLS_DIR` before first use only when the Wiki Skill must go into a different absolute skills directory. Set `WIKI_REPOSITORY_SKILLHUB_URL` when the company SkillHub address changes.
 

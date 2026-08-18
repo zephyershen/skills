@@ -33,8 +33,8 @@ ACTIONS = (
     Action("workspace", "wiki-candidates", "GET", "/projects/{projectId}/repository-candidates", "workspace:manage", "read", "列出 Wiki 候选"),
     Action("workspace", "group-create", "POST", "/projects/{projectId}/namespaces", "workspace:manage", "high", "创建或接入 Subgroup", body_required=True),
     Action("workspace", "wiki-create", "POST", "/projects/{projectId}/wiki-repositories", "workspace:manage", "high", "创建或接入 Wiki", body_required=True),
-    Action("workspace", "wiki-archive", "DELETE", "/projects/{projectId}/wiki-repositories/{repositoryId}", "workspace:manage", "high", "归档 Wiki"),
-    Action("workspace", "group-archive", "DELETE", "/projects/{projectId}/namespaces/{namespaceId}", "workspace:manage", "high", "归档 Group 或 Subgroup"),
+    Action("workspace", "wiki-archive", "DELETE", "/projects/{projectId}/wiki-repositories/{repositoryId}", "workspace:manage", "high", "归档 Wiki 并给 GitLab 名称与路径添加 deleted 后缀"),
+    Action("workspace", "group-archive", "DELETE", "/projects/{projectId}/namespaces/{namespaceId}", "workspace:manage", "high", "归档 Group 或 Subgroup 并给 GitLab 名称与路径添加 deleted 后缀"),
 
     Action("repo", "tree", "GET", "/repositories/{repositoryId}/tree", "wiki:read", "read", "读取 Wiki 文件树"),
     Action("repo", "snapshot", "GET", "/repositories/{repositoryId}/snapshot", "wiki:read", "read", "读取精确版本快照"),
@@ -76,7 +76,7 @@ ACTIONS = (
     Action("access", "resource-manager", "PUT", "/projects/{projectId}/resource-managers/{userId}", "access:manage", "high", "设置 Group 资源管理者", body_required=True),
 
     Action("archives", "list", "GET", "/archives", "archives:manage", "read", "列出归档资源"),
-    Action("archives", "restore", "POST", "/archives/{kind}/{id}/restore", "archives:manage", "high", "恢复归档资源"),
+    Action("archives", "restore", "POST", "/archives/{kind}/{id}/restore", "archives:manage", "high", "恢复归档资源及其 GitLab 原名称与路径"),
     Action("archives", "purge", "DELETE", "/archives/{kind}/{id}", "archives:manage", "critical", "永久清理归档资源", body_required=True, confirmation_text="PERMANENTLY DELETE {kind} {id}"),
 
     Action("gitlab", "status", "GET", "/integrations/gitlab/status", "integrations:manage", "read", "检查 GitLab 连接"),

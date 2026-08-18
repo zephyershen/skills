@@ -45,6 +45,8 @@ Every platform mutation is blocked on first invocation. The CLI writes a one-tim
 
 Plans never contain credential values. The second invocation must match the same server, path, body, query, and relevant local output path. A plan expires after ten minutes, is consumed before the request, and cannot be retried. Critical operations additionally require an exact phrase.
 
+Recoverable archive and restore plans also contain the exact current `expected_full_path`. The CLI resolves that path from a fresh platform read both when creating and consuming the plan, while the API compares it again with the live platform and GitLab target. Any path change stops the operation and requires a new plan.
+
 The CLI does not blindly retry any write request. If a network failure makes the outcome ambiguous, query the current state before planning another write.
 
 ## Risk levels
@@ -55,6 +57,8 @@ The CLI does not blindly retry any write request. If a network failure makes the
 - `critical`: permanent purge, platform-admin change, or global integration change; requires an exact phrase.
 
 Permanent archive purge has two confirmations: the API body `confirmation` must equal the archive's `full_path`, and the CLI requires `PERMANENTLY DELETE <kind> <id>`.
+
+Ordinary resource archive is reversible but changes the backing GitLab name and path to a timestamped `-deleted` identity. This releases the original path without deleting content. Always show that URL/path impact before confirmation, and verify both the platform archive and returned backing identity afterward.
 
 ## Content handling
 

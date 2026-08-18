@@ -291,6 +291,7 @@ def handle_action(client, gate, endpoint, args):
     path = render_path(action.path, args)
     query = parse_query(args.param)
     body = parse_json_input(args, required=action.body_required) if action.method != "GET" else None
+    body = bind_archive_target(client, action, args, body)
     required_text = action.confirmation_text
     if required_text:
         format_values = {
@@ -333,6 +334,75 @@ def handle_action(client, gate, endpoint, args):
         result["token_saved_to"] = saved_to
         result["token"] = "<stored-not-shown>"
     return f"{action.group}.{action.name}", redact(result)
+
+
+def bind_archive_target(client, action, args, body):
+    operation = f"{action.group}.{action.name}"
+    if operation in {"workspace.group-archive", "workspace.wiki-archive"}:
+        workspace = client.api(
+            "GET",
+            f"/projects/{args.project_id}/workspace",
+            query={"reconcile": "false"},
+            retry=True,
+        )
+        if operation == "workspace.group-archive":
+            items = workspace.get("namespaces", []) if isinstance(workspace, dict) else []
+            target_id = args.namespace_id
+            path_key = "full_path"
+        else:
+            items = workspace.get("repositories", []) if isinstance(workspace, dict) else []
+            target_id = args.repository_id
+            path_key = "path_with_namespace"
+        target = next(
+            (
+                item for item in items
+                if isinstance(item, dict) and positive_object_id(item.get("id")) == target_id
+            ),
+            None,
+        )
+        full_path = target.get(path_key) if isinstance(target, dict) else None
+    elif operation == "archives.restore":
+        result = client.api("GET", "/archives", retry=True)
+        items = result.get("items", []) if isinstance(result, dict) else []
+        target = next(
+            (
+                item for item in items
+                if isinstance(item, dict)
+                and str(item.get("kind")) == str(args.kind)
+                and positive_object_id(item.get("id")) == args.id
+            ),
+            None,
+        )
+        full_path = target.get("full_path") if isinstance(target, dict) else None
+    else:
+        return body
+
+    full_path = str(full_path or "").strip()
+    if not full_path:
+        raise OperatorError(
+            "目标已不存在或当前账号不可见，请重新读取资源列表",
+            code="archive_target_not_found",
+            exit_code=6,
+        )
+    output = dict(body or {})
+    supplied = output.get("expected_full_path")
+    if supplied is not None and str(supplied) != full_path:
+        raise OperatorError(
+            "目标路径已变化，请使用当前列表重新生成确认计划",
+            code="archive_target_changed",
+            exit_code=3,
+            details={"current_full_path": full_path},
+        )
+    output["expected_full_path"] = full_path
+    return output
+
+
+def positive_object_id(value):
+    try:
+        identifier = int(value)
+    except (TypeError, ValueError):
+        return None
+    return identifier if identifier > 0 else None
 
 
 def handle_server(args, store, *, reset):

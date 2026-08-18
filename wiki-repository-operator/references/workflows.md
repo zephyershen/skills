@@ -123,7 +123,9 @@ For an ordinary “delete” request, use the recoverable archive command:
 $CLI workspace wiki-archive --project-id 7 --repository-id 12
 ```
 
-Verify that the Wiki disappears from the workspace and appears in `archives list` for an administrator. Platform archival preserves backing GitLab storage.
+Before confirmation, explain that ordinary archive preserves all GitLab content but renames both its visible name and path to `<original>-YYYYMMDD-HHmmssSSS-deleted`. The CLI automatically puts the exact current `expected_full_path` in the plan and reads it again at confirmation time; if it changed, discard the old plan and generate a new one. After execution, report `backing_archived_name` and `backing_archived_path`, verify that the resource disappears from the workspace, is absent from binding candidates, and appears in `archives list` for an administrator.
+
+Restore is also a planned high-risk mutation. Its plan automatically binds the exact `full_path` returned by `archives list`. It attempts to rename GitLab back to the original name and path before making the platform record active. If the archive item changed or the original path has already been reused, stop on the conflict; never rename or overwrite the newer resource to force restoration.
 
 Permanent purge is a separate critical workflow:
 

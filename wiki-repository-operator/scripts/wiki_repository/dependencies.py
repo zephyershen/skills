@@ -52,13 +52,13 @@ def ensure_wiki_skill_once(store, *, operator_root=None, timeout=30, expected_ch
     """
 
     root = Path(operator_root or Path(__file__).absolute().parents[2]).expanduser().absolute()
-    target = _wiki_skill_target(root)
-    completed = _completed_record(store.read_settings(), root, target)
+    completed = _completed_record(store.read_settings(), root)
     if completed:
         return None
+    target = _wiki_skill_target(root)
 
     with _bootstrap_lock(store):
-        completed = _completed_record(store.read_settings(), root, target)
+        completed = _completed_record(store.read_settings(), root)
         if completed:
             return None
 
@@ -141,14 +141,15 @@ def _wiki_skill_target(operator_root):
     return base / WIKI_NAME
 
 
-def _completed_record(settings, operator_root, target):
+def _completed_record(settings, operator_root):
     record = settings.get(BOOTSTRAP_SETTINGS_KEY) if isinstance(settings, dict) else None
     return bool(
         isinstance(record, dict)
         and record.get("status") == "complete"
         and record.get("coordinate") == WIKI_COORDINATE
         and record.get("operator_root") == str(operator_root)
-        and record.get("install_path") == str(target)
+        and isinstance(record.get("install_path"), str)
+        and bool(record["install_path"])
     )
 
 

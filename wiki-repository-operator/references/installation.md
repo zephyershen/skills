@@ -45,7 +45,7 @@ For Devin, commit the complete directory into a connected repository. For a shar
 
 ## Automatic Wiki Skill dependency
 
-The user installs only `global-skills/wiki-repository-operator@1.1.3`. The first CLI command performs this sequence before continuing the requested platform command:
+The user installs only the currently published `global-skills/wiki-repository-operator@1.1.3`. This source checkout is `1.1.4` and must not be advertised as a SkillHub coordinate until that version is actually published. The first CLI command performs this sequence before continuing the requested platform command:
 
 1. Read the private bootstrap completion marker.
 2. When the marker is absent, check the sibling `wiki/` directory once.
@@ -54,7 +54,7 @@ The user installs only `global-skills/wiki-repository-operator@1.1.3`. The first
 5. Write the completion marker only after the Wiki Skill is ready.
 6. Continue the original command in the same invocation.
 
-Later normal commands trust the completion marker and do not inspect `wiki/` or contact SkillHub. A failed first installation writes no completion marker, so the next invocation retries. An incompatible pre-existing `wiki/` directory is never overwritten.
+Later normal commands trust the completion marker and its first resolved install path; they do not recompute a different default path, inspect `wiki/`, or contact SkillHub. A failed first installation writes no completion marker, so the next invocation retries. An incompatible pre-existing `wiki/` directory is never overwritten.
 
 The completion marker is kept in `${XDG_CONFIG_HOME:-~/.config}/wiki-repository-operator/settings.json`. `WIKI_REPOSITORY_SKILLS_DIR` can select another absolute destination before first use. `WIKI_REPOSITORY_SKILLHUB_URL` or the compatible `SKILLHUB_API_URL` can replace the company SkillHub root before first use.
 

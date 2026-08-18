@@ -168,6 +168,41 @@ class DependencyBootstrapTests(unittest.TestCase):
                 self.assertNotIn("wiki_skill_bootstrap", payload)
                 self.assertEqual(CombinedHandler.skillhub_downloads, 1)
 
+    def test_completion_marker_keeps_the_first_resolved_install_directory(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            operator_root = root / "source" / "wiki-repository-operator"
+            configured_skills = root / "agent-skills"
+            store = CredentialStore(root / "config")
+            environment = {
+                "WIKI_REPOSITORY_SKILLS_DIR": str(configured_skills),
+                "WIKI_REPOSITORY_SKILLHUB_URL": self.origin,
+            }
+            with (
+                patch.dict(os.environ, environment, clear=False),
+                patch("wiki_repository.dependencies.CORE_FILE_SHA256", CORE_HASHES),
+            ):
+                result = ensure_wiki_skill_once(
+                    store,
+                    operator_root=operator_root,
+                    expected_checksum=PACKAGE_SHA256,
+                )
+            self.assertEqual(result["install_path"], str(configured_skills / "wiki"))
+            self.assertEqual(CombinedHandler.skillhub_downloads, 1)
+
+            incompatible_default = operator_root.parent / "wiki"
+            incompatible_default.mkdir(parents=True)
+            (incompatible_default / "SKILL.md").write_text("unrelated source checkout", encoding="utf-8")
+            with patch.dict(os.environ, {}, clear=False):
+                os.environ.pop("WIKI_REPOSITORY_SKILLS_DIR", None)
+                result = ensure_wiki_skill_once(
+                    store,
+                    operator_root=operator_root,
+                    expected_checksum=PACKAGE_SHA256,
+                )
+            self.assertIsNone(result)
+            self.assertEqual(CombinedHandler.skillhub_downloads, 1)
+
     def test_existing_incompatible_wiki_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

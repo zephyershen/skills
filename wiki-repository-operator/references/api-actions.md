@@ -56,6 +56,8 @@ The `tokens create` response never prints the new token. The output file must no
 - `workspace wiki-archive --project-id ID --repository-id REPO_ID`
 - `workspace group-archive --project-id ID --namespace-id NS_ID`
 
+Ordinary archive keeps GitLab content but changes the backing name and path to a Shanghai timestamped `-deleted` identity. Before creating and consuming the confirmation plan, the CLI reads the selected resource and automatically binds its exact current `expected_full_path`; callers do not need to supply that field manually. A changed or missing target requires a new plan. The response returns the resulting backing name/path. Archived identities are omitted from Group/Subgroup/Wiki binding candidates. `archives restore` applies the same path binding, tries to reclaim the original GitLab name/path, and fails safely if either is no longer available.
+
 Binding existing objects uses opaque references returned by candidate endpoints:
 
 - top-level Group: `{"gitlab":{"mode":"bind","group_reference":"full/path"}}`

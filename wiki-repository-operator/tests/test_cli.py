@@ -20,6 +20,8 @@ CREATED_PAT = "wkp_" + "created" + "childtoken123456789"
 
 class PlatformHandler(BaseHTTPRequestHandler):
     create_calls = 0
+    archive_calls = 0
+    workspace_full_path = "pa2-2/t-mobile/teton"
 
     def do_GET(self):
         if self.path == "/service/meta":
@@ -32,6 +34,17 @@ class PlatformHandler(BaseHTTPRequestHandler):
             if self.headers.get("Authorization") != f"Bearer {TEST_PAT}":
                 return self.respond(401, {"error": "bad token", "code": "invalid_token"})
             return self.respond(200, {"id": 7, "name": "Agent Owner", "is_admin": True, "available_token_scopes": ["wiki:read", "tokens:manage"]})
+        if self.path == "/api/projects/7/workspace?reconcile=false":
+            return self.respond(200, {
+                "namespaces": [{"id": 18, "full_path": type(self).workspace_full_path}],
+                "repositories": [],
+            })
+        if self.path == "/api/archives":
+            return self.respond(200, {"items": [{
+                "kind": "namespace",
+                "id": 18,
+                "full_path": type(self).workspace_full_path,
+            }]})
         return self.respond(404, {"error": "missing"})
 
     def do_POST(self):
@@ -45,6 +58,18 @@ class PlatformHandler(BaseHTTPRequestHandler):
                 "scopes": body["scopes"],
                 "token": CREATED_PAT,
             })
+        if self.path == "/api/archives/namespace/18/restore":
+            length = int(self.headers.get("Content-Length", 0))
+            body = json.loads(self.rfile.read(length))
+            return self.respond(200, {"ok": True, "received": body})
+        return self.respond(404, {"error": "missing"})
+
+    def do_DELETE(self):
+        if self.path == "/api/projects/7/namespaces/18":
+            type(self).archive_calls += 1
+            length = int(self.headers.get("Content-Length", 0))
+            body = json.loads(self.rfile.read(length))
+            return self.respond(200, {"ok": True, "received": body})
         return self.respond(404, {"error": "missing"})
 
     def respond(self, status, value):
@@ -159,6 +184,48 @@ class CliTests(unittest.TestCase):
             self.assertEqual(output, "")
             self.assertIn("--json", error)
             self.assertFalse((Path(temporary) / "config" / "plans").exists())
+
+    def test_archive_plan_binds_the_live_path_and_rejects_a_changed_target(self):
+        with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {
+            "WIKI_REPOSITORY_CONFIG_DIR": str(Path(temporary) / "config"),
+            "WIKI_REPOSITORY_URL": self.origin,
+            "WIKI_REPOSITORY_TOKEN": TEST_PAT,
+        }, clear=False):
+            PlatformHandler.archive_calls = 0
+            PlatformHandler.workspace_full_path = "pa2-2/t-mobile/teton"
+            arguments = [
+                "workspace", "group-archive", "--project-id", "7", "--namespace-id", "18",
+            ]
+            code, output, error = self.run_cli(arguments)
+            self.assertEqual((code, error), (3, ""))
+            plan = json.loads(output)["error"]["plan"]
+            self.assertEqual(
+                plan["request"]["body"]["expected_full_path"],
+                "pa2-2/t-mobile/teton",
+            )
+
+            PlatformHandler.workspace_full_path = "pa2-2/t-mobile/teton-renamed"
+            code, _output, error = self.run_cli([*arguments, "--confirm", plan["id"]])
+            self.assertEqual(code, 3)
+            self.assertIn("confirmation_mismatch", error)
+            self.assertEqual(PlatformHandler.archive_calls, 0)
+
+    def test_restore_plan_binds_the_current_archive_path(self):
+        with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {
+            "WIKI_REPOSITORY_CONFIG_DIR": str(Path(temporary) / "config"),
+            "WIKI_REPOSITORY_URL": self.origin,
+            "WIKI_REPOSITORY_TOKEN": TEST_PAT,
+        }, clear=False):
+            PlatformHandler.workspace_full_path = "pa2-2/t-mobile/teton"
+            code, output, error = self.run_cli([
+                "archives", "restore", "--kind", "namespace", "--id", "18",
+            ])
+            self.assertEqual((code, error), (3, ""))
+            plan = json.loads(output)["error"]["plan"]
+            self.assertEqual(
+                plan["request"]["body"]["expected_full_path"],
+                "pa2-2/t-mobile/teton",
+            )
 
 
 if __name__ == "__main__":

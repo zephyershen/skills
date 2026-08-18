@@ -23,6 +23,7 @@ The first CLI command for each installed copy of this operator automatically ens
 
 - The completion marker is written only after a compatible Wiki Skill is present.
 - Once the marker is complete, later operator commands must not inspect the Wiki Skill directory and must not contact SkillHub again.
+- The marker binds the operator copy to the install path resolved on its first run; later commands must not switch to a different sibling merely because an environment override is absent.
 - Do not add a manual dependency check before every user request. The CLI owns this first-use-only behavior.
 - The first command still performs the user's requested command after installation. Its JSON result includes `wiki_skill_bootstrap` with the installed path; later results omit that field.
 - If the first result contains `wiki_skill_bootstrap`, read the installed `SKILL.md` before adding, editing, deleting, normalizing, or uploading Wiki content. Treat it as supporting instructions inside this operator workflow; do not replace the active operator workflow merely to invoke a second Skill.
@@ -64,6 +65,8 @@ Before calling a write operation, resolve the exact object and intended effect:
 - When renaming a Wiki Group, read its current state first. Treat `name` as the human-visible label and `path` as the lowercase URL/GitLab path; show both current and target values plus the GitLab path impact before confirmation.
 - For permissions, identify the target person, exact resource, and level (`none`, `read`, or `write`).
 - For “删除”, determine whether the user means recoverable archive or permanent purge. Default to recoverable archive when not explicit.
+- Recoverable Group/Subgroup/Wiki archive preserves GitLab content but renames the backing name and path with a Shanghai timestamp plus a final `deleted` suffix. Read the API response and report the archived backing name/path. These suffixed objects are hidden from normal binding candidates.
+- Restore attempts to return the backing GitLab name and path to their originals. If the original path has been reused, report the conflict and do not bypass it or overwrite the newer resource.
 - For content changes, generate an upload preview, inspect it, submit a change request, and let an authorized reviewer approve it.
 
 ## Confirmation Protocol
@@ -76,6 +79,8 @@ Read-only commands execute immediately. Every production mutation uses a two-ste
 4. For critical actions, also pass the exact `confirmation_text` returned by the plan using `--confirm-text`.
 
 Never invent a plan ID, skip the first step, reuse a plan, alter parameters after confirmation, or treat a failed mutation as safe to retry. Plans expire after 10 minutes and contain no credential values.
+
+Archive and restore plans automatically read the current resource and bind `expected_full_path` into the plan. The confirmation attempt reads it again; a renamed, replaced, missing, or newly invisible target stops before mutation and requires a new plan.
 
 After a successful mutation, use a read command to verify the resulting state and report both the change and verification.
 
