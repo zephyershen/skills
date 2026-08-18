@@ -44,6 +44,7 @@ The `tokens create` response never prints the new token. The output file must no
 - `projects list` (`wiki:read`)
 - `projects explorer` (`wiki:read`)
 - `projects directory` (`workspace:manage`)
+- `projects parents` (`workspace:manage`; lists allowed Group/Subgroup parents below the hidden root)
 - `projects get --project-id ID` (`wiki:read`)
 - `projects create --json '{"name":"PA2","description":"Team Wiki","gitlab":{"mode":"create","path":"pa2"}}'` (`workspace:manage`)
 - `projects update --project-id ID --json '{"description":"Updated"}'` (`workspace:manage`, high risk)
@@ -146,12 +147,13 @@ Permanent purge also requires the CLI critical phrase returned by the plan. Neve
 - `jira apply --secret-env JIRA_PAT`
 - `jira clear`
 - `jira projects`
+- `jira parents`
 - `jira import-preview --json-file /path/jira-items.json`
-- `jira import --json '{"items":[{"jira_project_id":"12618"}],"confirmed":true}'`
+- `jira import --json '{"items":[{"jira_project_id":"12618","parent_namespace_id":15}],"confirmed":true}'`
 
 `gitlab apply` and `jira apply` validate the supplied credential before producing a mutation plan, validate it again before execution, and never include it in plan or output.
 
-Jira imports always use the hidden default storage root. Do not call `jira parents` in a normal workflow and never send `parent_namespace_id`; that compatibility endpoint returns no selectable destinations.
+Jira imports always stay below the hidden default storage root. Omit `parent_namespace_id` or send `null` to create at the logical top level directly below that root. To create a Subgroup, first call `jira parents` and send one returned `namespace_id` as `parent_namespace_id`; never guess or reuse an unverified parent ID.
 
 ## Name resolution
 

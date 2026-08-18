@@ -205,7 +205,7 @@ $CLI jira apply --secret-env JIRA_PAT
 
 Review Jira URL, account, and project count. The apply step is critical and requires `APPLY JIRA TOKEN`. Verify with `jira status` and `jira projects`.
 
-For Jira imports, call `jira projects`, build selections containing only `jira_project_id`, run `jira import-preview`, show every source project and the automatically selected target path, then plan `jira import` with `"confirmed": true`. Do not call `jira parents` or send `parent_namespace_id`. Verify each created logical Group in its project workspace.
+For Jira imports, call `jira projects` and `jira parents`. For each project, omit `parent_namespace_id` (or send `null`) to use the default Wiki directory, or send a currently returned parent `namespace_id` to create below that Group/Subgroup. Run `jira import-preview`, show every source project, selected parent, and final `full_path`, then plan `jira import` with `"confirmed": true`. Never guess a parent ID. Verify each created logical Group or Subgroup in its project workspace.
 
 ## Change the platform IP
 

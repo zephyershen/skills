@@ -23,6 +23,7 @@ ACTIONS = (
 
     Action("projects", "list", "GET", "/projects", "wiki:read", "read", "列出可见 Wiki Group"),
     Action("projects", "directory", "GET", "/projects/directory", "workspace:manage", "read", "读取 Group 管理目录"),
+    Action("projects", "parents", "GET", "/projects/creation-parents", "workspace:manage", "read", "列出可创建 Group 的父级位置"),
     Action("projects", "explorer", "GET", "/projects/explorer", "wiki:read", "read", "读取资源树入口"),
     Action("projects", "get", "GET", "/projects/{projectId}", "wiki:read", "read", "读取 Wiki Group"),
     Action("projects", "create", "POST", "/projects", "workspace:manage", "high", "创建或接入 Wiki Group", body_required=True),
@@ -88,7 +89,7 @@ ACTIONS = (
 
     Action("jira", "status", "GET", "/integrations/jira/status", "integrations:manage", "read", "读取 Jira 绑定状态"),
     Action("jira", "projects", "GET", "/integrations/jira/projects", "integrations:manage", "read", "列出 Jira 项目"),
-    Action("jira", "parents", "GET", "/integrations/jira/parents", "integrations:manage", "read", "兼容读取固定 Jira 导入位置"),
+    Action("jira", "parents", "GET", "/integrations/jira/parents", "integrations:manage", "read", "列出 Jira 导入可选父级位置"),
     Action("jira", "import-preview", "POST", "/integrations/jira/imports/preview", "integrations:manage", "medium", "预览 Jira 导入", body_required=True),
     Action("jira", "import", "POST", "/integrations/jira/imports", "integrations:manage", "high", "执行 Jira 导入", body_required=True),
 )

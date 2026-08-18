@@ -28,7 +28,7 @@ class SkillContractTests(unittest.TestCase):
         manifest = json.loads((SKILL_DIR / "skill.json").read_text(encoding="utf-8"))
 
         self.assertEqual(manifest["namespace"], "global-skills")
-        self.assertEqual(manifest["version"], "1.2.1")
+        self.assertEqual(manifest["version"], "1.2.2")
         self.assertEqual(manifest["dependencies"][0]["coordinate"], "global-skills/wiki@1.0.0")
         self.assertEqual(manifest["dependencies"][0]["install"], "first-use-once")
         self.assertIn("later operator commands must not inspect the Wiki Skill directory", skill)
@@ -48,13 +48,13 @@ class SkillContractTests(unittest.TestCase):
         readme = (SKILL_DIR / "README.md").read_text(encoding="utf-8")
         installation = (SKILL_DIR / "references" / "installation.md").read_text(encoding="utf-8")
 
-        self.assertIn("publishes `global-skills/wiki-repository-operator@1.2.1`", readme)
-        self.assertIn("skillhub install global-skills/wiki-repository-operator@1.2.1", readme)
-        self.assertIn("skillhub install global-skills/wiki-repository-operator@1.2.1", installation)
-        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.2.0", readme)
-        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.2.0", installation)
+        self.assertIn("publishes `global-skills/wiki-repository-operator@1.2.2`", readme)
+        self.assertIn("skillhub install global-skills/wiki-repository-operator@1.2.2", readme)
+        self.assertIn("skillhub install global-skills/wiki-repository-operator@1.2.2", installation)
+        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.2.1", readme)
+        self.assertNotIn("skillhub install global-skills/wiki-repository-operator@1.2.1", installation)
 
-    def test_hidden_system_root_workflow_is_safe_and_jira_has_no_parent_choice(self):
+    def test_hidden_system_root_workflow_is_safe_and_jira_supports_optional_parents(self):
         skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
         workflows = (SKILL_DIR / "references" / "workflows.md").read_text(encoding="utf-8")
         actions = (SKILL_DIR / "references" / "api-actions.md").read_text(encoding="utf-8")
@@ -65,7 +65,9 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("projects system-root-revert", workflows)
         self.assertIn("preserving each GitLab project ID and full commit history", workflows)
         self.assertIn("platform_repository_count", workflows)
-        self.assertIn("Do not call `jira parents`", workflows)
+        self.assertIn("call `jira projects` and `jira parents`", workflows)
+        self.assertIn("omit `parent_namespace_id`", workflows)
+        self.assertIn("selected parent", workflows)
         self.assertNotIn('projects update --project-id 7 --json \'{"name":"Global Wiki"', actions)
 
 
